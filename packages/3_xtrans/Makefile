@@ -1,6 +1,6 @@
 ############################################################################
 # Author: Daniel Giritzer (daniel@giritzer.eu)
-# Description: Universal Makefile for the libX11 library (depends on xproto and libxcb)
+# Description: Universal Makefile for the xtrans library (depends on xproto)
 ############################################################################
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 

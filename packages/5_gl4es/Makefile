@@ -1,6 +1,6 @@
 ############################################################################
 # Author: Daniel Giritzer, S1810567004 (daniel@giritzer.eu)
-# Description: Universal Makefile for the armadillo library
+# Description: Universal Makefile for the gl4es library
 ############################################################################
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 

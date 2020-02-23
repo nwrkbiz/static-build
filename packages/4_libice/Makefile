@@ -1,6 +1,6 @@
 ############################################################################
 # Author: Daniel Giritzer (daniel@giritzer.eu)
-# Description: Universal Makefile for the libxau library
+# Description: Universal Makefile for the libice library
 ############################################################################
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 

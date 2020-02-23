@@ -1,6 +1,6 @@
 ############################################################################
 # Author: Daniel Giritzer (daniel@giritzer.eu)
-# Description: Universal Makefile for the sdl library
+# Description: Universal Makefile for the sdl2 library
 ############################################################################
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
