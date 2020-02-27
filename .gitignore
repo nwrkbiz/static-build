@@ -1,6 +1,6 @@
 3rdParty/
 scripts/
-compiler_packages/
+compiler_packages/musl/musl-cross-make-master/
 
 *.zip
 *.tar.gz
