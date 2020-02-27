@@ -10,7 +10,6 @@ PACKNAME=$(DIRNAME).tar.gz
 PACKAGE_URL=https://www.ensmallen.org/files/$(PACKNAME)
 UNPACK=tar xvzf
 LICENSE=$(WORKDIR)/$(DIRNAME)/COPYRIGHT.txt $(WORKDIR)/$(DIRNAME)/LICENSE.txt
-LICENSE_OUTPUT=$(OUTDIR)/LICENSES/$(DIRNAME)
 
 # Builds artifacts and includes 
 INCLUDE_OUTPUT=$(WORKDIR)/$(DIRNAME)/include/*

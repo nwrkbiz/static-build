@@ -10,7 +10,6 @@ PACKNAME=$(DIRNAME).tar.gz
 PACKAGE_URL=https://www.libsdl.org/release/$(PACKNAME)
 UNPACK=tar xvzf
 LICENSE=$(WORKDIR)/$(DIRNAME)/COPYING.txt $(WORKDIR)/$(DIRNAME)/CREDITS.txt
-LICENSE_OUTPUT=$(OUTDIR)/LICENSES/$(DIRNAME)
 
 #### Build settings ####
 

@@ -10,7 +10,6 @@ PACKNAME=$(DIRNAME).tar.gz
 PACKAGE_URL=http://www.mega-nerd.com/libsndfile/files/$(PACKNAME)
 UNPACK=tar xvzf
 LICENSE=$(WORKDIR)/$(DIRNAME)/COPYING $(WORKDIR)/$(DIRNAME)/AUTHORS
-LICENSE_OUTPUT=$(OUTDIR)/LICENSES/$(DIRNAME)
 
 
 #### Build settings ####

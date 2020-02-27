@@ -10,7 +10,6 @@ PACKNAME=1.2.2.tar.gz
 PACKAGE_URL=https://github.com/xiph/libao/archive/$(PACKNAME)
 UNPACK=tar xvzf
 LICENSE=$(WORKDIR)/$(DIRNAME)/COPYING $(WORKDIR)/$(DIRNAME)/AUTHORS
-LICENSE_OUTPUT=$(OUTDIR)/LICENSES/$(DIRNAME)
 
 #### Build settings ####
 

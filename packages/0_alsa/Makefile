@@ -10,7 +10,6 @@ PACKNAME=$(DIRNAME).tar.bz2
 PACKAGE_URL=ftp://ftp.alsa-project.org/pub/lib/$(PACKNAME)
 UNPACK=tar xvf
 LICENSE=$(WORKDIR)/$(DIRNAME)/COPYING
-LICENSE_OUTPUT=$(OUTDIR)/LICENSES/$(DIRNAME)
 
 
 #### Build settings ####

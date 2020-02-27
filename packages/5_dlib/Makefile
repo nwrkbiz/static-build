@@ -10,7 +10,6 @@ PACKNAME=$(DIRNAME).tar.bz2
 PACKAGE_URL=http://dlib.net/files/$(PACKNAME)
 UNPACK=tar xvf
 LICENSE=$(WORKDIR)/$(DIRNAME)/dlib/LICENSE.txt
-LICENSE_OUTPUT=$(OUTDIR)/LICENSES/$(DIRNAME)
 
 #### Build settings ####
 

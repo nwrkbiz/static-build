@@ -10,7 +10,6 @@ PACKNAME=$(DIRNAME).tar.xz
 PACKAGE_URL=https://sourceforge.net/projects/arma/files/$(PACKNAME)
 UNPACK=tar xJf
 LICENSE=$(WORKDIR)/$(DIRNAME)/NOTICE.txt $(WORKDIR)/$(DIRNAME)/LICENSE.txt
-LICENSE_OUTPUT=$(OUTDIR)/LICENSES/$(DIRNAME)
 
 #### Build settings ####
 

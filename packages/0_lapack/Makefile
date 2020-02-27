@@ -10,7 +10,6 @@ PACKNAME=v3.9.0.tar.gz
 PACKAGE_URL=https://github.com/Reference-LAPACK/lapack/archive/$(PACKNAME)
 UNPACK=tar xvzf
 LICENSE=$(WORKDIR)/$(DIRNAME)/LICENSE
-LICENSE_OUTPUT=$(OUTDIR)/LICENSES/$(DIRNAME)
 
 # Builds artifacts and includes 
 LIB_OUTPUT=$(WORKDIR)/$(DIRNAME)/libblas.a $(WORKDIR)/$(DIRNAME)/libcblas.a $(WORKDIR)/$(DIRNAME)/liblapack.a
