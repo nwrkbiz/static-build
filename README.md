@@ -12,6 +12,10 @@ For gnu targets the easiest way is to install the crossbuild-essential-* and gfo
 ### Musl Targets
 For musl targets the crosscompiler toolchain has to exist within the targets output directory. The toolchain is built automatically when calling make.
 
+### ToDos
+
+ffmpeg, gstreamer
+
 ### About
 
 2020, Daniel Giritzer
