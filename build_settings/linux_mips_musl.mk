@@ -31,7 +31,7 @@ LDFLAGS=-L$(OUT_LIB) $(DEFAULT_LDFLAGS)
 FFLAGS=-O3 -frecursive
 
 ### Customize CFG/CMK
-CUSTOM_CMK=
+CUSTOM_CMK=-DCMAKE_C_FLAGS="$(CFLAGS) -march=mips32" -DCMAKE_CXX_FLAGS="$(CXXFLAGS) -march=mips32"
 CUSTOM_CFG=
 
 ### Package Related CFG
