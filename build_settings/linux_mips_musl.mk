@@ -21,9 +21,9 @@ GCC_PATH=$(OUT_BIN)/
 ARCH_BIT=32
 
 ### FLAGS
-DEFAULT_CFLAGS=-fPIC -O3 -D__MIPS__ -march=mips32
-DEFAULT_CXXFLAGS=-fPIC -static-libstdc++ -O3 -D__MIPS__ -march=mips32
-DEFAULT_LDFLAGS=-static -lc -static-libstdc++ -lpthread -ldl -lgfortran -latomic
+DEFAULT_CFLAGS=-fPIC -O3 -D__MIPS__ -D_MIPS_ARCH_MIPS32
+DEFAULT_CXXFLAGS=-fPIC -static-libstdc++ -O3 -D__MIPS__ -D_MIPS_ARCH_MIPS32
+DEFAULT_LDFLAGS=-static -lc -static-libstdc++ -lpthread -ldl
 
 CFLAGS=-I$(OUT_INCLUDE) $(DEFAULT_CFLAGS)
 CXXFLAGS=-I$(OUT_INCLUDE) $(DEFAULT_CXXFLAGS)
