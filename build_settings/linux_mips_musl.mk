@@ -21,8 +21,8 @@ GCC_PATH=$(OUT_BIN)/
 ARCH_BIT=32
 
 ### FLAGS
-DEFAULT_CFLAGS=-fPIC -O3 -D__MIPS__ -D_MIPS_ARCH_MIPS32
-DEFAULT_CXXFLAGS=-fPIC -static-libstdc++ -O3 -D__MIPS__ -D_MIPS_ARCH_MIPS32
+DEFAULT_CFLAGS=-fPIC -O3 -D__MIPS__ -D_MIPS_ARCH_MIPS32 -D'__TBB_machine_fetchadd4(addr, val)=__sync_fetch_and_add(addr, val)'
+DEFAULT_CXXFLAGS=-fPIC -static-libstdc++ -O3 -D__MIPS__ -D_MIPS_ARCH_MIPS32 -D'__TBB_machine_fetchadd4(addr, val)=__sync_fetch_and_add(addr, val)'
 DEFAULT_LDFLAGS=-static -lc -static-libstdc++ -lpthread -ldl
 
 CFLAGS=-I$(OUT_INCLUDE) $(DEFAULT_CFLAGS)
