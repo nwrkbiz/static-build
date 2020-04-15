@@ -18,7 +18,7 @@ export PATH:=$(OUT_BIN):$(PATH)
 GCC_HOST_PREFIX=x86_64-linux-gnu # GCC prefix for the architecture of this machine
 GCC_PREFIX=aarch64-linux-musl
 GCC_PATH=$(OUT_BIN)/
-ARCH_BIT=32
+ARCH_BIT=64
 
 ### FLAGS
 
