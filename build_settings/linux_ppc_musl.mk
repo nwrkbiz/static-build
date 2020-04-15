@@ -21,8 +21,8 @@ GCC_PATH=$(OUT_BIN)/
 ARCH_BIT=32
 
 ### FLAGS
-DEFAULT_CFLAGS=-fPIC -static-libgcc -O3 -D'__TBB_machine_fetchadd4(addr, val)=__sync_fetch_and_add(addr, val)'
-DEFAULT_CXXFLAGS=-fPIC -static-libgcc -static-libstdc++ -O3 -D'__TBB_machine_fetchadd4(addr, val)=__sync_fetch_and_add(addr, val)'
+DEFAULT_CFLAGS=-fPIC -static-libgcc -O3
+DEFAULT_CXXFLAGS=-fPIC -static-libgcc -static-libstdc++ -O3
 DEFAULT_LDFLAGS=-static -static-libgcc -static-libstdc++ -lpthread -ldl
 
 CFLAGS=-I$(OUT_INCLUDE) $(DEFAULT_CFLAGS)
@@ -31,7 +31,7 @@ LDFLAGS=-L$(OUT_LIB) $(DEFAULT_LDFLAGS)
 FFLAGS=-O3 -frecursive
 
 ### Customize CFG/CMK
-CUSTOM_CMK=
+CUSTOM_CMK=-DCMAKE_C_FLAGS="$(CFLAGS) -D'__TBB_machine_fetchadd4(addr, val)=__sync_fetch_and_add(addr, val)'" -DCMAKE_CXX_FLAGS="$(CXXFLAGS) -D'__TBB_machine_fetchadd4(addr, val)=__sync_fetch_and_add(addr, val)'"
 CUSTOM_CFG=
 
 ### Package Related CFG

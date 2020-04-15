@@ -21,8 +21,8 @@ GCC_PATH=$(OUT_BIN)/
 ARCH_BIT=32
 
 ### FLAGS
-DEFAULT_CFLAGS=-fPIC -O3 -D__MIPS__ -D_MIPS_ARCH_MIPS32 -D'__TBB_machine_fetchadd4(addr, val)=__sync_fetch_and_add(addr, val)'
-DEFAULT_CXXFLAGS=-fPIC -static-libstdc++ -O3 -D__MIPS__ -D_MIPS_ARCH_MIPS32 -D'__TBB_machine_fetchadd4(addr, val)=__sync_fetch_and_add(addr, val)'
+DEFAULT_CFLAGS=-fPIC -O3 -D__MIPS__
+DEFAULT_CXXFLAGS=-fPIC -static-libstdc++ -O3 -D__MIPS__
 DEFAULT_LDFLAGS=-static -lc -static-libstdc++ -lpthread -ldl
 
 CFLAGS=-I$(OUT_INCLUDE) $(DEFAULT_CFLAGS)
@@ -31,7 +31,7 @@ LDFLAGS=-L$(OUT_LIB) $(DEFAULT_LDFLAGS)
 FFLAGS=-O3 -frecursive
 
 ### Customize CFG/CMK
-CUSTOM_CMK=-DCMAKE_C_FLAGS="$(CFLAGS) -march=mips32" -DCMAKE_CXX_FLAGS="$(CXXFLAGS) -march=mips32"
+CUSTOM_CMK=-DCMAKE_C_FLAGS="$(CFLAGS) -march=mips32 -D'__TBB_machine_fetchadd4(addr, val)=__sync_fetch_and_add(addr, val)'" -DCMAKE_CXX_FLAGS="$(CXXFLAGS) -march=mips32 -D'__TBB_machine_fetchadd4(addr, val)=__sync_fetch_and_add(addr, val)'"
 CUSTOM_CFG=
 
 ### Package Related CFG
