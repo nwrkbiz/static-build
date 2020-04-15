@@ -11,9 +11,6 @@ PACKAGE_URL=https://github.com/google/leveldb/archive/$(PACKNAME)
 UNPACK=unzip -o
 LICENSE=$(WORKDIR)/$(DIRNAME)/LICENSE $(WORKDIR)/$(DIRNAME)/AUTHORS
 
-LIB_OUTPUT=$(WORKDIR)$(DIRNAME)/build/libleveldb.a
-INCLUDE_OUTPUT=$(WORKDIR)$(DIRNAME)/include/*
-
 #### Build settings ####
 
 CONFIGURE=$(DEFAULT_CMK) -DHAVE_CRC32C=false -DHAVE_SNAPPY=false
