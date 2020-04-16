@@ -22,7 +22,7 @@ export LD_LIBRARY_PATH=$(OUT_LIB)
 ### FLAGS
 DEFAULT_CFLAGS=-m32 -fPIC -static-libgcc -O3
 DEFAULT_CXXFLAGS=-m32 -fPIC -static-libgcc -static-libstdc++ -O3
-DEFAULT_LDFLAGS=-m32 -static -static-libgcc -static-libstdc++ -lpthread
+DEFAULT_LDFLAGS=-m32 -static -static-libgcc -static-libstdc++ -lpthread -lusp10
 
 CFLAGS=-I$(OUT_INCLUDE) $(DEFAULT_CFLAGS)
 CXXFLAGS=-I$(OUT_INCLUDE) $(DEFAULT_CXXFLAGS)
@@ -31,7 +31,7 @@ FFLAGS=-O3 -frecursive
 
 ### Customize CFG/CMK
 CUSTOM_CMK=-DWIN32=true -D_WIN32=true -DMINGW=true -DCMAKE_SYSTEM_NAME=Windows -DCMAKE_RC_COMPILER=$(GCC_PATH)/$(GCC_PREFIX)-windres -DHB_HAVE_UNISCRIBE=true  -DHAVE_MMAP=false -DHAVE_STRTOD_L=false
-CUSTOM_CFG=GCC_WINDRES=$(GCC_PATH)/$(GCC_PREFIX)-windres WINDRES=$(GCC_PATH)/$(GCC_PREFIX)-windres
+CUSTOM_CFG=GCC_WINDRES=$(GCC_PATH)/$(GCC_PREFIX)-windres WINDRES=$(GCC_PATH)/$(GCC_PREFIX)-windres LIBS="-lusp10 -lole32 -luuid -lcomctl32 -lwsock32 -lws2_32 -lksuser -lwinmm -lrpcrt4 -lcrypt32 -lgdi32"
 
 ### Package Related CFG
 OPENSSL_CFG=mingw
