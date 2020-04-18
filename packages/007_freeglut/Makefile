@@ -13,13 +13,9 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/COPYING $(WORKDIR)/$(DIRNAME)/AUTHORS
 
 #### Build settings ####
 
-ifeq (,$(filter $(MAKECMDGOALS),windows_32 windows_64))
 CONFIGURE=$(DEFAULT_CMK)  -DFREEGLUT_BUILD_SHARED_LIBS=false -DFREEGLUT_BUILD_STATIC_LIBS=true
 MAKE=$(DEFAULT_MAKE) freeglut_static
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME)/build && $(DEFAULT_MAKE) install/fast
-else
-MAKE=
-endif
 
 # build targets
 include $(WORKDIR)../GENERAL.mk
