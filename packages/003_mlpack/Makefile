@@ -5,7 +5,7 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=mlpack-3.2.2
+DIRNAME=mlpack-3.3.0
 PACKNAME=$(DIRNAME).tar.gz
 PACKAGE_URL=https://www.mlpack.org/files/$(PACKNAME)
 UNPACK=tar xvzf

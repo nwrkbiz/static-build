@@ -5,7 +5,7 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=freetype-2.9.1
+DIRNAME=freetype-2.10.1
 PACKNAME=$(DIRNAME).tar.gz
 PACKAGE_URL=https://download.savannah.gnu.org/releases/freetype/$(PACKNAME)
 UNPACK=tar xvzf
