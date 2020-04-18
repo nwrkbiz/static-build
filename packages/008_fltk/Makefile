@@ -13,7 +13,12 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/COPYING $(WORKDIR)/$(DIRNAME)/CREDITS
 
 #### Build settings ####
 
+ifeq (,$(filter $(MAKECMDGOALS),windows_32 windows_64))
+CONFIGURE=$(DEFAULT_CFG) --disable-xcursor --enable-xinerama --enable-xrender --enable-xfixes LIBS="-lX11 -lxcb -lXdmcp -lXau -ldl -lm -ldl -lm -lpthread"
+else
 CONFIGURE=$(DEFAULT_CFG) --disable-xcursor --enable-xinerama --enable-xrender --enable-xfixes
+endif
+
 MAKE=$(DEFAULT_MAKE) -i
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(DEFAULT_INSTALL) -i
 
