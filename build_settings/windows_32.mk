@@ -20,8 +20,8 @@ OUT_INCLUDE=$(OUT_PREFIX)/include
 export LD_LIBRARY_PATH=$(OUT_LIB)
 
 ### FLAGS
-DEFAULT_CFLAGS=-m32 -fPIC -static-libgcc -O3  -DWIN32 -D_WIN32 -DMINGW
-DEFAULT_CXXFLAGS=-m32 -fPIC -static-libgcc -static-libstdc++ -O3  -DWIN32 -D_WIN32 -DMINGW
+DEFAULT_CFLAGS=-m32 -fPIC -static-libgcc -O3 -D_WIN32 -DMINGW
+DEFAULT_CXXFLAGS=-m32 -fPIC -static-libgcc -static-libstdc++ -O3 -D_WIN32 -DMINGW
 DEFAULT_LDFLAGS=-m32 -static -static-libgcc -static-libstdc++ -lpthread
 
 CFLAGS=-I$(OUT_INCLUDE) $(DEFAULT_CFLAGS)
