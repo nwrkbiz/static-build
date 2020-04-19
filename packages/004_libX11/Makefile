@@ -13,7 +13,7 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/COPYING $(WORKDIR)/$(DIRNAME)/AUTHORS
 
 #### Build settings ####
 
-CONFIGURE=$(DEFAULT_CFG) --disable-selective-werror
+CONFIGURE=$(DEFAULT_CFG) --disable-selective-werror --disable-ipv6
 MAKE=$(DEFAULT_MAKE)
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(DEFAULT_INSTALL)
 

@@ -13,9 +13,13 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/COPYING $(WORKDIR)/$(DIRNAME)/AUTHORS
 
 #### Build settings ####
 
-CONFIGURE=$(DEFAULT_CFG)
+ifeq (,$(filter $(MAKECMDGOALS),windows_32 windows_64))
+CONFIGURE=$(DEFAULT_CFG) --disable-ipv6
 MAKE=$(DEFAULT_MAKE)
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(DEFAULT_INSTALL)
+else
+MAKE=
+endif
 
 # build targets
 include $(WORKDIR)../GENERAL.mk
