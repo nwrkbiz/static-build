@@ -22,9 +22,9 @@ ARCH_BIT=32
 
 ### FLAGS
 
-DEFAULT_CFLAGS=-fPIC -lc -O3
-DEFAULT_CXXFLAGS=-fPIC -lc -static-libstdc++ -O3
-DEFAULT_LDFLAGS=-static -lc -static-libstdc++ -lpthread -ldl
+DEFAULT_CFLAGS=-fPIC -O3
+DEFAULT_CXXFLAGS=-fPIC -static-libstdc++ -O3
+DEFAULT_LDFLAGS=-static -static-libstdc++ -lpthread -ldl
 
 CFLAGS=-I$(OUT_INCLUDE) $(DEFAULT_CFLAGS)
 CXXFLAGS=-I$(OUT_INCLUDE) $(DEFAULT_CXXFLAGS)
