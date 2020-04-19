@@ -5,7 +5,7 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=openssl-1.1.1d
+DIRNAME=openssl-1.1.1f
 PACKNAME=$(DIRNAME).tar.gz
 PACKAGE_URL=https://www.openssl.org/source/$(PACKNAME)
 UNPACK=tar xvzf
@@ -13,7 +13,7 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/LICENSE $(WORKDIR)/$(DIRNAME)/AUTHORS
 
 #### Build settings ####
 
-CONFIGURE=Configure -no-idea -no-mdc2 -no-rc5 -no-shared $(CFLAGS) $(LDFLAGS) $(OPENSSL_CFG) --prefix=$(OUT_PREFIX) --openssldir=$(OUT_PREFIX) --cross-compile-prefix=$(GCC_PATH)/$(GCC_PREFIX)-
+CONFIGURE=Configure -no-shared $(CFLAGS) $(LDFLAGS) $(OPENSSL_CFG) --prefix=$(OUT_PREFIX) --openssldir=$(OUT_PREFIX) --cross-compile-prefix=$(GCC_PATH)/$(GCC_PREFIX)-
 MAKE=$(DEFAULT_MAKE)
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(DEFAULT_INSTALL)
 
