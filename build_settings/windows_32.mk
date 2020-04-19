@@ -22,7 +22,7 @@ export LD_LIBRARY_PATH=$(OUT_LIB)
 ### FLAGS
 DEFAULT_CFLAGS=-m32 -fPIC -static-libgcc -O3
 DEFAULT_CXXFLAGS=-m32 -fPIC -static-libgcc -static-libstdc++ -O3
-DEFAULT_LDFLAGS=-m32 -static -static-libgcc -static-libstdc++ -lpthread -lusp10
+DEFAULT_LDFLAGS=-m32 -static -static-libgcc -static-libstdc++ -lpthread
 
 CFLAGS=-I$(OUT_INCLUDE) $(DEFAULT_CFLAGS)
 CXXFLAGS=-I$(OUT_INCLUDE) $(DEFAULT_CXXFLAGS)
