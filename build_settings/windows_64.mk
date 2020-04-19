@@ -20,8 +20,8 @@ OUT_INCLUDE=$(OUT_PREFIX)/include
 export LD_LIBRARY_PATH=$(OUT_LIB)
 
 ### FLAGS
-DEFAULT_CFLAGS=-fPIC -static-libgcc -O3
-DEFAULT_CXXFLAGS=-fPIC -static-libgcc -static-libstdc++ -O3
+DEFAULT_CFLAGS=-fPIC -static-libgcc -O3 -DWIN64 -D_WIN64 -DMINGW
+DEFAULT_CXXFLAGS=-fPIC -static-libgcc -static-libstdc++ -O3 -DWIN64 -D_WIN64 -DMINGW
 DEFAULT_LDFLAGS=-static -static-libgcc -static-libstdc++ -lpthread
 
 CFLAGS=-I$(OUT_INCLUDE) $(DEFAULT_CFLAGS)
@@ -30,7 +30,7 @@ LDFLAGS=-L$(OUT_LIB) $(DEFAULT_LDFLAGS)
 FFLAGS=-O3 -frecursive
 
 ### Customize CFG/CMK
-CUSTOM_CMK=-DWIN32=true -D_WIN32=true -DMINGW=true -DCMAKE_SYSTEM_NAME=Windows -DCMAKE_RC_COMPILER=$(GCC_PATH)/$(GCC_PREFIX)-windres -DHB_HAVE_UNISCRIBE=true -DHAVE_MMAP=false -DHAVE_STRTOD_L=false
+CUSTOM_CMK=-DWIN64=true -D_WIN64=true -DMINGW=true -DCMAKE_SYSTEM_NAME=Windows -DCMAKE_RC_COMPILER=$(GCC_PATH)/$(GCC_PREFIX)-windres -DHB_HAVE_UNISCRIBE=true -DHAVE_MMAP=false -DHAVE_STRTOD_L=false
 CUSTOM_CFG=GCC_WINDRES=$(GCC_PATH)/$(GCC_PREFIX)-windres WINDRES=$(GCC_PATH)/$(GCC_PREFIX)-windres LIBS="-lusp10 -lole32 -luuid -lcomctl32 -lwsock32 -lws2_32 -lksuser -lwinmm -lrpcrt4 -lcrypt32 -lgdi32"
 
 ### Package Related CFG
