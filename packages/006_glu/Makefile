@@ -13,7 +13,7 @@ UNPACK=tar xvzf
 #### Build settings ####
 
 ifeq (,$(filter $(MAKECMDGOALS),windows_32 windows_64))
-CONFIGURE=$(DEFAULT_CFG) LIBS="-lX11 -lxcb -lXdmcp -lXau -ldl -lm -ldl -lm -lpthread"
+CONFIGURE=$(DEFAULT_CFG)
 MAKE=$(DEFAULT_MAKE)
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(DEFAULT_INSTALL)
 else
