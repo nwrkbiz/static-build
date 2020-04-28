@@ -14,7 +14,7 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/COPYING $(WORKDIR)/$(DIRNAME)/AUTHORS
 #### Build settings ####
 
 ifeq (,$(filter $(MAKECMDGOALS),windows_32 windows_64))
-CONFIGURE=$(DEFAULT_CFG) --disable-stripping
+CONFIGURE=$(DEFAULT_CFG) --disable-stripping --with-termlib
 else # workaround wrongly detected select on mingw64
 CONFIGURE=$(DEFAULT_CFG) --disable-stripping --enable-term-driver --enable-sp-funcs && sed -i -e 's/HAVE_SELECT 1/HAVE_SELECT 0/g' ./include/ncurses_cfg.h
 endif
