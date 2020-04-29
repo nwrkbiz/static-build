@@ -14,9 +14,9 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/COPYING $(WORKDIR)/$(DIRNAME)/AUTHORS
 #### Build settings ####
 
 ifeq (,$(filter $(MAKECMDGOALS),windows_32 windows_64))
-CONFIGURE=$(DEFAULT_CFG)  --without-systemd --without-python
+CONFIGURE=$(DEFAULT_CFG)  --without-systemd --without-python --with-bashcompletiondir=$(OUT_PREFIX)
 MAKE=$(DEFAULT_MAKE)
-AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(DEFAULT_MAKE) install-usrlib_execLTLIBRARIES install-binPROGRAMS
+AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(DEFAULT_MAKE) install-usrlib_execLTLIBRARIES install-binPROGRAMS install-pkgconfigDATA 
 else
 MAKE=$(DEFAULT_CFG)
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(DEFAULT_MAKE) install-uuidincHEADERS
