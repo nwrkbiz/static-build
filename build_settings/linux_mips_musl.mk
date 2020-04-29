@@ -30,6 +30,12 @@ CXXFLAGS=-I$(OUT_INCLUDE) $(DEFAULT_CXXFLAGS)
 LDFLAGS=-L$(OUT_LIB) $(DEFAULT_LDFLAGS)
 FFLAGS=-O3 -frecursive
 
+### Meson related configs
+CPU=mips
+CPU_FAMILY=mips
+ENDIAN=big
+OS=linux
+
 ### Customize CFG/CMK
 CUSTOM_CMK=-DCMAKE_C_FLAGS="$(CFLAGS) -march=mips32 -D'__TBB_machine_fetchadd4(addr, val)=__sync_fetch_and_add(addr, val)'" -DCMAKE_CXX_FLAGS="$(CXXFLAGS) -march=mips32 -D'__TBB_machine_fetchadd4(addr, val)=__sync_fetch_and_add(addr, val)'"
 CUSTOM_CFG=

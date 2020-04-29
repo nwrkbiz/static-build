@@ -29,6 +29,12 @@ CXXFLAGS=-I$(OUT_INCLUDE) $(DEFAULT_CXXFLAGS)
 LDFLAGS=-L$(OUT_LIB) $(DEFAULT_LDFLAGS)
 FFLAGS=-O3 -frecursive
 
+### Meson related configs
+CPU=i686
+CPU_FAMILY=x86
+ENDIAN=little
+OS=windows
+
 ### Customize CFG/CMK
 CUSTOM_CMK=-DWIN32=true -D_WIN32=true -DMINGW=true -DCMAKE_SYSTEM_NAME=Windows -DCMAKE_RC_COMPILER=$(GCC_PATH)/$(GCC_PREFIX)-windres -DHB_HAVE_UNISCRIBE=true  -DHAVE_MMAP=false -DHAVE_STRTOD_L=false
 CUSTOM_CFG=GCC_WINDRES=$(GCC_PATH)/$(GCC_PREFIX)-windres WINDRES=$(GCC_PATH)/$(GCC_PREFIX)-windres LIBS="-lusp10 -lole32 -luuid -lcomctl32 -lwsock32 -lws2_32 -lksuser -lwinmm -lrpcrt4 -lcrypt32 -lgdi32"

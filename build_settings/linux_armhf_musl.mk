@@ -31,6 +31,12 @@ CXXFLAGS=-I$(OUT_INCLUDE) $(DEFAULT_CXXFLAGS)
 LDFLAGS=-L$(OUT_LIB) $(DEFAULT_LDFLAGS)
 FFLAGS=-O3 -frecursive
 
+### Meson related configs
+CPU=arm
+CPU_FAMILY=arm
+ENDIAN=little
+OS=linux
+
 ### Customize CFG/CMK
 CUSTOM_CMK=
 CUSTOM_CFG=
