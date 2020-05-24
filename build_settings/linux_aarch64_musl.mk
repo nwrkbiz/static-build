@@ -12,7 +12,7 @@ OUT_BIN=$(OUT_PREFIX)/bin
 OUT_INCLUDE=$(OUT_PREFIX)/include
 
 export LD_LIBRARY_PATH:=$(OUT_LIB)
-export PATH:=$(OUT_BIN):$(PATH)
+export PATH:=$(OUT_BIN):$(PATH):.
 
 # General compiler settings
 GCC_HOST_PREFIX=x86_64-linux-gnu # GCC prefix for the architecture of this machine
