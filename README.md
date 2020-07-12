@@ -16,7 +16,7 @@ For musl targets the crosscompiler toolchain has to exist within the targets out
 
 ### Needed Debian packages
 
-flex, pkg-config, build-essential, cmake, meson, mingw-w64, gfortran-mingw-w64, ... (and maybe more?)
+gperf, flex, pkg-config, build-essential, cmake, meson, mingw-w64, gfortran-mingw-w64, ... (and maybe more?)
 
 ### About
 
