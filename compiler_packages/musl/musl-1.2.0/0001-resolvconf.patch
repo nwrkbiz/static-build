@@ -1,0 +1,22 @@
+--- a/src/network/resolvconf.c	2020-02-21 01:37:02.000000000 +0100
++++ b/src/network/resolvconf.c	2020-07-20 20:31:53.658107429 +0200
+@@ -23,7 +23,18 @@
+ 	case ENOENT:
+ 	case ENOTDIR:
+ 	case EACCES:
+-		goto no_resolv_conf;
++		f = __fopen_rb_ca("./resolv.conf", &_f, _buf, sizeof _buf);
++		if (!f) switch (errno) {
++		case ENOENT:
++		case ENOTDIR:
++		case EACCES:
++			goto no_resolv_conf;
++		default:
++			return -1;
++		}
++	default:
++		return -1;
++	}
+ 	default:
+ 		return -1;
+ 	}
