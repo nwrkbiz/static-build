@@ -18,6 +18,7 @@ OUT_BIN=$(OUT_PREFIX)/bin
 OUT_INCLUDE=$(OUT_PREFIX)/include
 
 export LD_LIBRARY_PATH=$(OUT_LIB)
+export PATH:=$(OUT_BIN):$(PATH):.
 
 ### FLAGS
 DEFAULT_CFLAGS=-m64 -fPIC -static-libgcc -O3 -D_WIN32 -D_WIN64 -DMINGW
