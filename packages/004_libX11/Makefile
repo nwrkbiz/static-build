@@ -5,7 +5,7 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=libX11-1.6.9
+DIRNAME=libX11-1.6.12
 PACKNAME=$(DIRNAME).tar.gz
 PACKAGE_URL=https://www.x.org/releases/current/src/lib/$(PACKNAME)
 UNPACK=tar xvzf

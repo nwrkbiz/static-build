@@ -5,7 +5,7 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=SDL2-2.0.10
+DIRNAME=SDL2-2.0.12
 PACKNAME=$(DIRNAME).tar.gz
 PACKAGE_URL=https://www.libsdl.org/release/$(PACKNAME)
 UNPACK=tar xvzf
