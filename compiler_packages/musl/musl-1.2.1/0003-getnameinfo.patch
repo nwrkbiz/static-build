@@ -1,0 +1,26 @@
+--- a/src/network/getnameinfo.c	2020-02-21 01:37:02.000000000 +0100
++++ b/src/network/getnameinfo.c	2020-07-21 02:57:16.051012541 +0200
+@@ -48,7 +48,10 @@
+ 	unsigned char _buf[1032], atmp[16];
+ 	struct address iplit;
+ 	FILE _f, *f = __fopen_rb_ca("/etc/hosts", &_f, _buf, sizeof _buf);
+-	if (!f) return;
++	if (!f) {
++		f = __fopen_rb_ca("./hosts", &_f, _buf, sizeof _buf);
++		if (!f) return;
++	}
+ 	if (family == AF_INET) {
+ 		memcpy(atmp+12, a, 4);
+ 		memcpy(atmp, "\0\0\0\0\0\0\0\0\0\0\xff\xff", 12);
+@@ -88,7 +91,10 @@
+ 	char line[128], *p, *z;
+ 	unsigned char _buf[1032];
+ 	FILE _f, *f = __fopen_rb_ca("/etc/services", &_f, _buf, sizeof _buf);
+-	if (!f) return;
++	if (!f) {
++		f = __fopen_rb_ca("./services", &_f, _buf, sizeof _buf);
++		if (!f) return;
++	}
+ 	while (fgets(line, sizeof line, f)) {
+ 		if ((p=strchr(line, '#'))) *p++='\n', *p=0;
+ 

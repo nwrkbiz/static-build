@@ -19,7 +19,7 @@ CONFIGURE=echo 'TARGET=$(GCC_PREFIX)' > config.mak ;\
 echo 'OUTPUT=$(OUT_PREFIX)' >> config.mak ;\
 echo 'COMMON_CONFIG += CFLAGS="-g0 -Os" CXXFLAGS="-g0 -Os" LDFLAGS="-s"' >> config.mak ;\
 echo 'GCC_CONFIG += --enable-languages=c,c++,fortran' >> config.mak ;\
-cp -rf $(WORKDIR)/musl-1.2.0/ $(WORKDIR)$(DIRNAME)/patches/
+cp -rf $(WORKDIR)/musl-1.2.1/ $(WORKDIR)$(DIRNAME)/patches/
 MAKE=$(DEFAULT_MAKE)
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(DEFAULT_INSTALL) && cd $(WORKDIR) && mkdir -p $(OUT_INCLUDE)/sys && cp unistd.h $(OUT_INCLUDE)/sys
 else

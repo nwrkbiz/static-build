@@ -1,0 +1,10 @@
+--- a/src/legacy/getusershell.c	2020-07-21 03:02:37.517111684 +0200
++++ b/src/legacy/getusershell.c	2020-07-21 03:03:05.640596818 +0200
+@@ -17,6 +17,7 @@
+ void setusershell(void)
+ {
+ 	if (!f) f = fopen("/etc/shells", "rbe");
++	if (!f) f = fopen("./shells", "rbe");
+ 	if (!f) f = fmemopen((void *)defshells, sizeof defshells - 1, "rb");
+ }
+ 
