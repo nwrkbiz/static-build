@@ -5,7 +5,7 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=pcre2-10.34
+DIRNAME=pcre2-10.35
 PACKNAME=$(DIRNAME).tar.gz
 PACKAGE_URL=ftp://ftp.pcre.org/pub/pcre/$(PACKNAME)
 UNPACK=tar xvzf
