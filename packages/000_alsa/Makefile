@@ -15,9 +15,9 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/COPYING
 #### Build settings ####
 
 ifeq (,$(filter $(MAKECMDGOALS),windows_32 windows_64))
-CONFIGURE=$(DEFAULT_CFG) --disable-shared --disable-mixer --disable-hwdep --disable-rawmidi --disable-seq --disable-instr --disable-alisp --with-pcm-plugins=no --with-libdl=no
+CONFIGURE=$(DEFAULT_CFG) --disable-shared --disable-mixer --disable-hwdep --disable-rawmidi --disable-seq --disable-instr --disable-alisp --with-pcm-plugins=no --with-libdl=no --with-configdir=./alsa_config
 MAKE=$(DEFAULT_MAKE)
-AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(DEFAULT_INSTALL)
+AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(DEFAULT_INSTALL) && mv $(WORKDIR)$(DIRNAME)/src/conf $(OUT_PREFIX)/alsa_conf
 else
 MAKE=
 endif
