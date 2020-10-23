@@ -14,7 +14,7 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/COPYING $(WORKDIR)/$(DIRNAME)/AUTHORS
 #### Build settings ####
 
 ifeq (,$(filter $(MAKECMDGOALS),windows_32 windows_64))
-PRE_CFG=./autogen.sh
+PRE_CFG=./autogen.sh && sed -i -e 's/static ao_functions \*static_drivers/ao_functions \*static_drivers/g' ./src/audio_out.c
 CONFIGURE=$(DEFAULT_CFG) --disable-pulse --enable-alsa --disable-alsa-mmap --disable-wmm
 MAKE=$(DEFAULT_MAKE)
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(DEFAULT_INSTALL)
