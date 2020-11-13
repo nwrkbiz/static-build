@@ -1,6 +1,6 @@
 ############################################################################
 # Author: Daniel Giritzer, S1810567004 (daniel@giritzer.eu)
-# Description: Universal Makefile for the mathgl library (depends on libx11, fltk, libharu, giflib, lbjpeg, zlib libpng)
+# Description: Universal Makefile for the mathgl library (depends on libx11, fltk, libharu, giflib, lbjpeg, zlib libpng, gsl)
 ############################################################################
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
@@ -15,10 +15,10 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/COPYING $(WORKDIR)/$(DIRNAME)/COPYING_LGPL $(WORKD
 
 ifeq (,$(filter $(MAKECMDGOALS),windows_32 windows_64))
 PRE_CFG=sed -i -e 's/\(TARGETS \).\{9\}/\1/' $(WORKDIR)$(DIRNAME)/CMakeLists.txt
-CONFIGURE=$(DEFAULT_CMK) -Denable-pdf=ON -Denable-gif=ON -Denable-pthread=ON -Denable-openmp=OFF -Denable-opengl=OFF -Denable-all-docs=off -Denable-all-swig=OFF -Denable-rvalue=ON -Denable-ltdl=OFF -Denable-doc-site=OFF -Denable-all-widgets=OFF -DFLTK_MATH_LIBRARY=m -Denable-fltk=ON
+CONFIGURE=$(DEFAULT_CMK) -Denable-gsl=ON -Denable-pdf=ON -Denable-gif=ON -Denable-pthread=ON -Denable-openmp=OFF -Denable-opengl=OFF -Denable-all-docs=off -Denable-all-swig=OFF -Denable-rvalue=ON -Denable-ltdl=OFF -Denable-doc-site=OFF -Denable-all-widgets=OFF -DFLTK_MATH_LIBRARY=m -Denable-fltk=ON
 else
 PRE_CFG=sed -i -e 's/\(TARGETS \).\{9\}/\1/' $(WORKDIR)$(DIRNAME)/CMakeLists.txt
-CONFIGURE=$(DEFAULT_CMK) -DIntl_INCLUDE_DIR=Intl_INCLUDE_DIR-NOTFOUND -Denable-pdf=ON -Denable-gif=ON -Denable-pthread=ON -Denable-openmp=OFF -Denable-opengl=OFF -Denable-all-docs=off -Denable-all-swig=OFF -Denable-rvalue=ON -Denable-ltdl=OFF -Denable-doc-site=OFF -Denable-all-widgets=OFF -DFLTK_FLUID_EXECUTABLE=$(OUT_BIN)/fluid.exe -Denable-fltk=ON 
+CONFIGURE=$(DEFAULT_CMK) -DIntl_INCLUDE_DIR=Intl_INCLUDE_DIR-NOTFOUND -Denable-gsl=ON  -Denable-pdf=ON -Denable-gif=ON -Denable-pthread=ON -Denable-openmp=OFF -Denable-opengl=OFF -Denable-all-docs=off -Denable-all-swig=OFF -Denable-rvalue=ON -Denable-ltdl=OFF -Denable-doc-site=OFF -Denable-all-widgets=OFF -DFLTK_FLUID_EXECUTABLE=$(OUT_BIN)/fluid.exe -Denable-fltk=ON 
 endif
 MAKE=$(DEFAULT_MAKE) mgl-fltk-static mgl-static mgl mgl-fltk -i
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME)/build && $(DEFAULT_INSTALL) -i
