@@ -21,7 +21,7 @@ echo 'COMMON_CONFIG += CFLAGS="-g0 -Os" CXXFLAGS="-g0 -Os" LDFLAGS="-s"' >> conf
 echo 'GCC_CONFIG += --enable-languages=c,c++,fortran' >> config.mak ;\
 cp -rf $(WORKDIR)/musl-1.2.1/ $(WORKDIR)$(DIRNAME)/patches/
 MAKE=$(DEFAULT_MAKE)
-AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(DEFAULT_INSTALL) && cd $(WORKDIR) && mkdir -p $(OUT_INCLUDE)/sys && cp unistd.h $(OUT_INCLUDE)/sys
+AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(DEFAULT_INSTALL) && cd $(WORKDIR) && mkdir -p $(OUT_INCLUDE)/sys && cp unistd.h $(OUT_INCLUDE)/sys && sed -i -e '/\#include <linux\/types.h>/ i \#include <time.h>' $(OUT_PREFIX)/$(GCC_PREFIX)/include/sound/asound.h
 else
 MAKE=
 endif
