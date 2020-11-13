@@ -5,8 +5,8 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=libharu-master
-PACKNAME=master.zip
+DIRNAME=libharu-RELEASE_2_3_0
+PACKNAME=RELEASE_2_3_0.zip
 PACKAGE_URL=https://github.com/libharu/libharu/archive/$(PACKNAME)
 UNPACK=unzip -o
 LICENSE=$(WORKDIR)/$(DIRNAME)/README
