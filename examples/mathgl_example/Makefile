@@ -2,9 +2,9 @@
 export PATH:=3rdParty/linux_aarch64_musl/bin:3rdParty/linux_armhf_musl/bin:3rdParty/linux_x86_64_musl/bin:3rdParty/linux_i686_musl/bin:3rdParty/linux_mips_musl/bin:3rdParty/linux_mipsel_musl/bin:3rdParty/linux_ppc_musl/bin:$(PATH)
 CPP=main.cpp
 NAME=mathgl_example
-PARAMS=-static -O3 -s -std=c++17 -lboost_system -lboost_iostreams -lboost_program_options -lssl -lcrypto -lstdc++fs -lmgl -lmgl-fltk -lfltk -lfltk_images -lfreetype -lz -lpthread -latomic -ldlib -lhpdfs -lgif -lpng -lgsl -llapack -lblas -lcblas -llapack -lblas -lgfortran -lm
-PARAMS_LINUX=-lopencv_imgcodecs -lopencv_imgproc -lopencv_core -littnotify -llibwebp -llibtiff -llibjasper -lIlmImf $(PARAMS) -ljpeg -lXinerama -lXft  -lXrender -lXfixes -lXext -lX11 -lxcb -lXau -lXdmcp -lrt -ldl 
-PARAMS_WINDOWS=-lopencv_imgcodecs440 -lopencv_imgproc440 -lopencv_core440 -llibwebp -llibtiff -llibjasper -lIlmImf $(PARAMS) -llibjpeg-turbo -DMGL_STATIC_DEFINE -DWIN32 -D_WIN32 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -mwindows -lole32 -luuid -lcomctl32 -lwsock32 -lws2_32 -lksuser -lwinmm -lcrypt32 -lgdi32
+PARAMS=-static -O3 -s -std=c++17 -lstdc++fs -lmgl -lmgl-fltk -lfltk -lfltk_images -lfreetype -lz -lpthread -latomic -ldlib -lhpdfs -ltiff -lgif -lpng -ljpeg -lgsl -llapack -lblas -lcblas -llapack -lblas -lgfortran -lm
+PARAMS_LINUX=$(PARAMS) -lXinerama -lXft  -lXrender -lXfixes -lXext -lX11 -lxcb -lXau -lXdmcp -lrt -ldl 
+PARAMS_WINDOWS=$(PARAMS) -DMGL_STATIC_DEFINE -DWIN32 -D_WIN32 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -mwindows -lole32 -luuid -lcomctl32 -lwsock32 -lws2_32 -lksuser -lwinmm -lcrypt32 -lgdi32
 
 all: all_musl all_windows
 all_musl: linux_x86_64_musl linux_i686_musl linux_armhf_musl linux_aarch64_musl linux_mips_musl linux_mipsel_musl linux_ppc_musl
