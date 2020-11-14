@@ -1,19 +1,18 @@
 ############################################################################
 # Author: Daniel Giritzer (daniel@giritzer.eu)
-# Description: Universal Makefile for the libharu PDF library
+# Description: Universal Makefile for the libtiff library
 ############################################################################
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=libharu-RELEASE_2_3_0
-PACKNAME=RELEASE_2_3_0.zip
-PACKAGE_URL=https://github.com/libharu/libharu/archive/$(PACKNAME)
+DIRNAME=tiff-4.1.0
+PACKNAME=$(DIRNAME).zip
+PACKAGE_URL=http://download.osgeo.org/libtiff/$(PACKNAME)
 UNPACK=unzip -o
-LICENSE=$(WORKDIR)/$(DIRNAME)/README
+LICENSE=$(WORKDIR)/$(DIRNAME)/COPYRIGHT
 #### Build settings ####
 
-PRE_CFG=sed -i -e 's~define	G3CODES~undef	G3CODES~g' $(WORKDIR)$(DIRNAME)/src/hpdf_image_ccitt.c
-CONFIGURE=$(DEFAULT_CMK)  -DMATH_LIB=m
+CONFIGURE=$(DEFAULT_CMK) -DBUILD_SHARED_LIBS=OFF 
 MAKE=$(DEFAULT_MAKE) -i
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME)/build && $(DEFAULT_INSTALL) -i
 
