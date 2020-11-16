@@ -38,7 +38,7 @@ ENDIAN=little
 OS=linux
 
 ### Customize CFG/CMK
-CUSTOM_CMK=
+CUSTOM_CMK=-DCMAKE_SYSTEM_PROCESSOR=aarch64 -DCMAKE_SYSTEM_NAME=Linux 
 CUSTOM_CFG=
 
 ### Package Related CFG

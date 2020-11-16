@@ -32,12 +32,12 @@ FFLAGS=-O3 -frecursive
 
 ### Meson related configs
 CPU=i686
-CPU_FAMILY=x86_64
+CPU_FAMILY=x86
 ENDIAN=little
 OS=linux
 
 ### Customize CFG/CMK
-CUSTOM_CMK=
+CUSTOM_CMK=-DCMAKE_SYSTEM_PROCESSOR=x86 -DCMAKE_SYSTEM_NAME=Linux 
 CUSTOM_CFG=
 
 ### Package Related CFG

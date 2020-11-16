@@ -37,7 +37,7 @@ ENDIAN=big
 OS=linux
 
 ### Customize CFG/CMK
-CUSTOM_CMK=-DCMAKE_C_FLAGS="$(CFLAGS) -D'__TBB_machine_fetchadd4(addr, val)=__sync_fetch_and_add(addr, val)'" -DCMAKE_CXX_FLAGS="$(CXXFLAGS) -D'__TBB_machine_fetchadd4(addr, val)=__sync_fetch_and_add(addr, val)'"
+CUSTOM_CMK=-DCMAKE_SYSTEM_PROCESSOR=ppc -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_C_FLAGS="$(CFLAGS) -D'__TBB_machine_fetchadd4(addr, val)=__sync_fetch_and_add(addr, val)'" -DCMAKE_CXX_FLAGS="$(CXXFLAGS) -D'__TBB_machine_fetchadd4(addr, val)=__sync_fetch_and_add(addr, val)'"
 CUSTOM_CFG=
 
 ### Package Related CFG
