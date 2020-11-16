@@ -6,8 +6,8 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=opencv-4.4.0
-PACKNAME=4.4.0.zip
+DIRNAME=opencv-4.5.0
+PACKNAME=4.5.0.zip
 PACKAGE_URL=https://github.com/opencv/opencv/archive/$(PACKNAME)
 UNPACK=unzip -o
 LICENSE=$(WORKDIR)/$(DIRNAME)/LICENSE
