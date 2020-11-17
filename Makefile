@@ -20,3 +20,6 @@ compilers:
 .PHONY: packages
 packages:
 	$(foreach package,$(PACK_DIRS), cd $(package) && make $(NL))
+
+clean:
+	rm -rf ./3rdParty
