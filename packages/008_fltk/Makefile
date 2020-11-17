@@ -14,9 +14,9 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/COPYING $(WORKDIR)/$(DIRNAME)/CREDITS
 #### Build settings ####
 
 ifeq (,$(filter $(MAKECMDGOALS),windows_32 windows_64))
-CONFIGURE=$(DEFAULT_CFG) --enable-xft --enable-xdbe --enable-xcursor --enable-xinerama --enable-xrender --enable-xfixes LIBS="-lXft -lXinerama -lXcursor -lfontconfig -lXrender -lXext -lXfixes -lharfbuzz -lfreetype -lharfbuzz -lX11 -lxcb -lXdmcp -lXau -lpng -lexpat -lz -ldl -lm -ldl -lm -lpthread"
+CONFIGURE=$(DEFAULT_CFG) --disable-xft --disable-xdbe --disable-xcursor --disable-xinerama --disable-xrender --disable-xfixes LIBS="-lXft -lXinerama -lXcursor -lfontconfig -lXrender -lXext -lXfixes -lharfbuzz -lfreetype -lharfbuzz -lX11 -lxcb -lXdmcp -lXau -lpng -lexpat -lz -ldl -lm -ldl -lm -lpthread"
 else
-CONFIGURE=$(DEFAULT_CFG) --enable-xft --enable-xdbe --enable-xcursor --enable-xinerama --enable-xrender --enable-xfixes
+CONFIGURE=$(DEFAULT_CFG) --disable-xft --disable-xdbe --disable-xcursor --disable-xinerama --disable-xrender --disable-xfixes
 endif
 
 MAKE=$(DEFAULT_MAKE) -i
