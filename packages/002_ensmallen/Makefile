@@ -5,7 +5,7 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=ensmallen-2.11.2
+DIRNAME=ensmallen-2.15.1
 PACKNAME=$(DIRNAME).tar.gz
 PACKAGE_URL=https://www.ensmallen.org/files/$(PACKNAME)
 UNPACK=tar xvzf

@@ -5,7 +5,7 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=armadillo-9.900.4
+DIRNAME=armadillo-10.1.2
 PACKNAME=$(DIRNAME).tar.xz
 PACKAGE_URL=https://sourceforge.net/projects/arma/files/$(PACKNAME)
 UNPACK=tar xJf
