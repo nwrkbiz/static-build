@@ -13,6 +13,7 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/COPYING $(WORKDIR)/$(DIRNAME)/AUTHORS
 
 #### Build settings ####
 
+PRE_CFG=cp -rf $(WORKDIR)$(DIRNAME)/ieee-utils/fp-unknown.c $(WORKDIR)$(DIRNAME)/ieee-utils/fp-gnuppc.c && cp -rf $(WORKDIR)$(DIRNAME)/ieee-utils/fp-unknown.c $(WORKDIR)$(DIRNAME)/ieee-utils/fp-gnux86.c
 CONFIGURE=$(DEFAULT_CFG)
 MAKE=$(DEFAULT_MAKE)
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(DEFAULT_INSTALL)
