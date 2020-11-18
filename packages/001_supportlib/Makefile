@@ -5,8 +5,8 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=Cpp-SupportLibrary-1.0.3
-PACKNAME=1.0.3.zip
+DIRNAME=Cpp-SupportLibrary-master
+PACKNAME=master.zip
 PACKAGE_URL=https://github.com/nwrkbiz/Cpp-SupportLibrary/archive/$(PACKNAME)
 UNPACK=unzip -o
 LICENSE=$(WORKDIR)/$(DIRNAME)/LICENSE
