@@ -13,11 +13,11 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/README
 
 #### Build settings ####
 
-ifeq (,$(filter $(MAKECMDGOALS),windows_32 windows_64))
+ifeq (,$(filter $(MAKECMDGOALS),windows_32 windows_64 linux_sh2fdpic_musl linux_sh2_musl linux_sh2eb_musl linux_sh2ebfdpic_musl))
 CONFIGURE=$(DEFAULT_MSN)
 MAKE=$(NINJA_MAKE)
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(NINJA_INSTALL)
-else # skip windows build for now, need to add a mingw-w64-gettext first
+else # skip windows build for now, need to add a mingw-w64-gettext first, also skip sh2 due to missing ffi support
 MAKE=
 endif
 

@@ -13,7 +13,7 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/LICENSE $(WORKDIR)/$(DIRNAME)/LICENSE-BUILDTOOLS
 
 #### Build settings ####
 
-ifeq (,$(filter $(MAKECMDGOALS),linux_sh2fdpic_musl))
+ifeq (,$(filter $(MAKECMDGOALS),linux_sh2fdpic_musl linux_sh2_musl linux_sh2eb_musl linux_sh2ebfdpic_musl))
 CONFIGURE=autogen.sh && $(DEFAULT_CFG)
 MAKE=$(DEFAULT_MAKE)
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(DEFAULT_INSTALL)
