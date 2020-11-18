@@ -36,6 +36,7 @@ CPU=mips64
 CPU_FAMILY=mips64
 ENDIAN=big
 OS=linux
+CUSTOM_MSN=
 
 ### Customize CFG/CMK
 CUSTOM_CMK=-DCMAKE_SYSTEM_PROCESSOR=mips64 -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_C_FLAGS="$(CFLAGS) -march=mips64 -D'__TBB_machine_fetchadd4(addr, val)=__sync_fetch_and_add(addr, val)'" -DCMAKE_CXX_FLAGS="$(CXXFLAGS) -march=mips64 -D'__TBB_machine_fetchadd4(addr, val)=__sync_fetch_and_add(addr, val)'"

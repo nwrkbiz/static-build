@@ -1,5 +1,6 @@
 ############################################################################
 # Author: Daniel Giritzer (daniel@giritzer.eu, giri@nwrk.biz)
+# Missing linux headers?
 ############################################################################
 SETTINGS_DIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 include $(SETTINGS_DIR)/build_settings/globals.mk
@@ -36,6 +37,7 @@ CPU=s390x
 CPU_FAMILY=s390x
 ENDIAN=big
 OS=linux
+CUSTOM_MSN=
 
 ### Customize CFG/CMK
 CUSTOM_CMK=-DCMAKE_SYSTEM_PROCESSOR=s390x -DCMAKE_SYSTEM_NAME=Linux 
