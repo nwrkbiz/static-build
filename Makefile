@@ -5,6 +5,8 @@
 PACK_DIRS=$(shell ls -d packages/*/)
 COMPILER_DIRS=$(shell ls -d compiler_packages/*/)
 
+include build_settings/globals.mk
+
 # newline
 define NL
 
@@ -22,4 +24,4 @@ packages:
 	$(foreach package,$(PACK_DIRS), cd $(package) && make $(NL))
 
 clean:
-	rm -rf ./3rdParty
+	rm -rf $(OUTDIR)
