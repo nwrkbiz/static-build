@@ -13,7 +13,7 @@ DEFAULT_MAKE=make -j$(MAKE_JOBS) V=$(MAKE_VERBOSE) VERBOSE=$(MAKE_VERBOSE)
 DEFAULT_INSTALL=$(DEFAULT_MAKE) install
 
 # ninja
-ifeq (,$(filter $(VERBOSE),1))
+ifeq (,$(filter $(MAKE_VERBOSE),1))
 NINJA_MAKE=ninja -v -C _build -j$(MAKE_JOBS)
 else
 NINJA_MAKE=ninja -C _build -j$(MAKE_JOBS) 
