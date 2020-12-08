@@ -1,0 +1,9 @@
+[submodule "examples/simple-webcam"]
+	path = examples/simple-webcam
+	url = https://github.com/nwrkbiz/simple-webcam
+[submodule "examples/webdevtools"]
+	path = examples/webdevtools
+	url = https://github.com/nwrkbiz/webdevtools
+[submodule "examples/mnist-lenet"]
+	path = examples/mnist-lenet
+	url = https://github.com/nwrkbiz/mnist-lenet
