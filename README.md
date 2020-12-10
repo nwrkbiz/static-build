@@ -14,7 +14,7 @@ and many commonly needed C/C++ libraries from source so you can easily create st
 Debian 10 (buster amd64) base installation with following additional packages and internet access:
 
 ```
-sudo apt install gperf flex bison pkg-config build-essential cmake meson mingw-w64 gfortran-mingw-w64 texinfo build-essential
+sudo apt install gperf flex bison pkg-config build-essential cmake meson mingw-w64 gfortran-mingw-w64 texinfo doxygen build-essential
 ```
 
 #### Configure mingw to use posix threads
