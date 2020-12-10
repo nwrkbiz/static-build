@@ -22,9 +22,9 @@ GCC_PATH=$(OUT_BIN)/
 ARCH_BIT=64
 
 ### FLAGS
-DEFAULT_CFLAGS=-fPIC -O3
-DEFAULT_CXXFLAGS=-fPIC -static-libstdc++ -O3 -mabi=64
-DEFAULT_LDFLAGS=-static -static-libstdc++ -lpthread -ldl -mabi=64
+DEFAULT_CFLAGS=-fPIC -static-libgcc -O3
+DEFAULT_CXXFLAGS=-fPIC -static-libgcc -static-libstdc++ -O3 -mabi=64
+DEFAULT_LDFLAGS=--static -static-libgcc -static-libstdc++ -lpthread -ldl -mabi=64
 
 CFLAGS=-I$(OUT_INCLUDE) $(DEFAULT_CFLAGS)
 CXXFLAGS=-I$(OUT_INCLUDE) $(DEFAULT_CXXFLAGS)

@@ -23,7 +23,7 @@ export PATH:=$(OUT_BIN):$(PATH):.
 ### FLAGS
 DEFAULT_CFLAGS=-m32 -fPIC -static-libgcc -O3 -D_WIN32 -DMINGW
 DEFAULT_CXXFLAGS=-m32 -fPIC -static-libgcc -static-libstdc++ -O3 -D_WIN32 -DMINGW
-DEFAULT_LDFLAGS=-m32 -static -static-libgcc -static-libstdc++ -lpthread
+DEFAULT_LDFLAGS=-m32 --static -static-libgcc -static-libstdc++ -lpthread
 
 CFLAGS=-I$(OUT_INCLUDE) $(DEFAULT_CFLAGS)
 CXXFLAGS=-I$(OUT_INCLUDE) $(DEFAULT_CXXFLAGS)
