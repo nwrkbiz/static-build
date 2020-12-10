@@ -15,7 +15,7 @@ define NL
 
 endef
 
-all: compilers packages examples
+all: compilers packages
 
 .PHONY: compilers
 compilers:
