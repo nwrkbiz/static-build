@@ -18,6 +18,6 @@ jobs:
     - name: setup mingw posix
       run: sudo update-alternatives --set x86_64-w64-mingw32-gcc /usr/bin/x86_64-w64-mingw32-gcc-posix && sudo update-alternatives --set x86_64-w64-mingw32-g++ /usr/bin/x86_64-w64-mingw32-g++-posix && sudo update-alternatives --set i686-w64-mingw32-gcc /usr/bin/i686-w64-mingw32-gcc-posix && sudo update-alternatives --set i686-w64-mingw32-g++ /usr/bin/i686-w64-mingw32-g++-posix
     - name: grab build settings
-      run: ln -s ./build_settings/windows_64.mk .
+      run: ln -s ./build_settings/linux_x86_64_musl.mk .
     - name: build
       run: make
