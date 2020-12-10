@@ -13,9 +13,11 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/COPYING $(WORKDIR)/$(DIRNAME)/AUTHORS
 
 #### Build settings ####
 
+#to generate pc file this is missing in cmake build
+PRE_CFG=$(DEFAULT_CFG)
 CONFIGURE=$(DEFAULT_CMK) -DHAVE_STRTOQ=OFF
 MAKE=$(DEFAULT_MAKE)
-AFTER_BUILD=cd $(WORKDIR)$(DIRNAME)/build && $(DEFAULT_INSTALL)
+AFTER_BUILD=cd $(WORKDIR)$(DIRNAME)/build && $(DEFAULT_INSTALL) && cp -rf $(WORKDIR)$(DIRNAME)/libpcre.pc $(OUT_LIB)/pkgconfig
 
 # build targets
 include $(WORKDIR)../GENERAL.mk
