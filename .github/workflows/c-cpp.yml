@@ -1,0 +1,23 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: setup dependencies
+      run: sudo apt-get update && sudo apt-get install -yq gperf flex bison pkg-config build-essential cmake meson mingw-w64 gfortran-mingw-w64 texinfo doxygen build-essential libltdl-dev
+    - name: setup mingw posix
+      run: sudo update-alternatives --set x86_64-w64-mingw32-gcc /usr/bin/x86_64-w64-mingw32-gcc-posix && sudo update-alternatives --set x86_64-w64-mingw32-g++ /usr/bin/x86_64-w64-mingw32-g++-posix && sudo update-alternatives --set i686-w64-mingw32-gcc /usr/bin/i686-w64-mingw32-gcc-posix && sudo update-alternatives --set i686-w64-mingw32-g++ /usr/bin/i686-w64-mingw32-g++-posix
+    - name: grab build settings
+      run: ln -s ./build_settings/windows_64.mk .
+    - name: build
+      run: make
