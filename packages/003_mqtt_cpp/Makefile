@@ -1,6 +1,6 @@
 ############################################################################
 # Author: Daniel Giritzer, S1810567004 (daniel@giritzer.eu)
-# Description: Universal Makefile for the armadillo library
+# Description: Universal Makefile for the mqtt_cpp library, depends on boost
 ############################################################################
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
