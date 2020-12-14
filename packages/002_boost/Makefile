@@ -4,7 +4,7 @@
 ############################################################################
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
-MODULES=--with-system --with-iostreams --with-program_options --with-test --with-serialization
+MODULES=--with-system --with-iostreams --with-program_options --with-test --with-serialization --with-date_time
 
 # Avaiable Modules
 # atomic, chrono, container, context, contract, coroutine, date_time, exception, fiber, filesystem, graph, graph_parallel, iostreams, locale
