@@ -5,9 +5,9 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=libevent-2.1.11-stable
+DIRNAME=libevent-2.1.12-stable
 PACKNAME=$(DIRNAME).tar.gz
-PACKAGE_URL=https://github.com/libevent/libevent/releases/download/release-2.1.11-stable/$(PACKNAME)
+PACKAGE_URL=https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/$(PACKNAME)
 UNPACK=tar xvzf
 LICENSE=$(WORKDIR)/$(DIRNAME)/LICENSE
 
