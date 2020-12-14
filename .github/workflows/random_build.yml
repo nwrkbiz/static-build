@@ -5,11 +5,10 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-on:
+
   schedule:
     - cron: '0 */6 * * *' 
-   
-on:
+
   workflow_dispatch
 
 jobs:
