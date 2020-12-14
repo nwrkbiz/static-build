@@ -13,13 +13,10 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/COPYING $(WORKDIR)/$(DIRNAME)/AUTHORS
 
 #### Build settings ####
 
-ifeq (,$(filter $(MAKECMDGOALS),windows_32 windows_64))
+PRE_CFG=sed -i -e 's/libsdb.get_shared_lib/libsdb.get_static_lib/g' $(WORKDIR)$(DIRNAME)/meson.build
 CONFIGURE=$(DEFAULT_MSN)
 MAKE=$(NINJA_MAKE)
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(NINJA_INSTALL)
-else
-MAKE=
-endif
 
 # build targets
 include $(WORKDIR)../GENERAL.mk
