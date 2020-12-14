@@ -43,3 +43,4 @@ CUSTOM_CFG=GCC_WINDRES=$(GCC_PATH)/$(GCC_PREFIX)-windres WINDRES=$(GCC_PATH)/$(G
 
 ### Package Related CFG
 OPENSSL_CFG=mingw64
+FFMPEG_CFG=--target-os=mingw64

@@ -43,3 +43,4 @@ CUSTOM_CFG=
 
 ### Package Related CFG
 OPENSSL_CFG=linux-mips32
+FFMPEG_CFG=--target-os=linux

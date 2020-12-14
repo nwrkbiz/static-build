@@ -13,7 +13,7 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/LICENSE.md $(WORKDIR)/$(DIRNAME)/COPYING.*
 
 #### Build settings ####
 
-CONFIGURE=$(DEFAULT_CFG)
+CONFIGURE=cd $(WORKDIR)$(DIRNAME) && ./configure --enable-cross-compile --extra-ldflags=-static --ranlib=$(GCC_PREFIX)-ranlib --cross-prefix=$(GCC_PREFIX)- --arch=$(CPU_FAMILY) --enable-static --disable-shared --prefix=$(OUT_PREFIX) $(FFMPEG_CFG)
 MAKE=$(DEFAULT_MAKE)
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(DEFAULT_INSTALL)
 

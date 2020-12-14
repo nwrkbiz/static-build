@@ -44,3 +44,4 @@ CUSTOM_CFG=
 
 ### Package Related CFG
 OPENSSL_CFG=linux-armv4
+FFMPEG_CFG=--target-os=linux
