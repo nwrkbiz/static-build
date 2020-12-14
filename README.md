@@ -1,13 +1,11 @@
 Build System to create static libraries
 ======================
 
-A set of makefiles to build cross-compile toolchains and static libraries for many CPU architectures.
+A set of makefiles to build cross-compile toolchains, static libraries and applications for many CPU architectures.
 
 ### Why
 
-On linux a commonly faced problem is packaging, because it is not easily possible to package a program to run on all different linux flavours. One way to archieve this is,
-by completely statically linking all dependencies into your executable. For this to archieve a special c libary (here musl) is needed. This set of Makefiles will build the needed compilers, libc
-and many commonly needed C/C++ libraries from source so you can easily create statically linked executables.
+On Linux a commonly faced problem is packaging, because it is not easily possible to package a program for all different Linux flavors. There are many approaches like containerization to overcome this problem. One other way to archive this is, by completely statically linking all dependencies into your executable. For this to archive a special c library (here musl) is needed. This set of Makefiles will build the needed compilers, libc and many commonly needed C/C++ libraries from source so you can easily create statically linked executables.
 
 ### Prerequisites
 
@@ -37,17 +35,19 @@ sudo update-binfmts --import /usr/share/binfmts/wine
 Copy or symlink the settings file(s) for the needed architecture(s) from build_settings to the root directory and run make.
 Global settings (i.e. number of build jobs etc.) can be adjusted in build_settings/globals.mk.
 
+
+#### Example
+
+```
+ln -s ./build_settings/linux_x86_64_musl.mk .
+ln -s ./build_settings/windows_64.mk .
+make
+```
+
 #### Security Info
 
 Currently no signature checking is performed on the downloaded packages!
 
-### Windows Targets
-
-For windows only the libraries in the "packages" folder is built. The debian mingw toolchain is used. (MinGW allows creating fully statically linked executables, so there is no need for a special compiler.)
-
-### Linux Musl Targets
-
-For musl targets the crosscompiler toolchain has to exist within the targets output directory. The toolchain is built automatically when calling make, all libraries are built afterwards.
 
 ### About
 
