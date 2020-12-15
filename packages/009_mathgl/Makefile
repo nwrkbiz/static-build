@@ -20,7 +20,7 @@ else
 CONFIGURE=$(DEFAULT_CMK) -DIntl_INCLUDE_DIR=Intl_INCLUDE_DIR-NOTFOUND -Denable-gsl=ON  -Denable-pdf=ON -Denable-gif=ON -Denable-pthread=ON -Denable-openmp=OFF -Denable-opengl=OFF -Denable-all-docs=off -Denable-all-swig=OFF -Denable-rvalue=ON -Denable-ltdl=OFF -Denable-doc-site=OFF -Denable-all-widgets=OFF -DFLTK_FLUID_EXECUTABLE=$(OUT_BIN)/fluid.exe -Denable-fltk=ON -DHPDF_INCLUDE_DIR=$(OUT_INCLUDE) -DHPDF_LIB=$(OUT_LIB)/libhpdfs.a -DMGL_DEP_LIBS=$(OUT_LIB)/libtiff.a -Dlink_type=-static 
 endif
 MAKE=$(DEFAULT_MAKE) mgl-static mgl-fltk-static
-AFTER_BUILD=cd $(WORKDIR)$(DIRNAME)/build && $(DEFAULT_INSTALL)
+AFTER_BUILD=cd $(WORKDIR)$(DIRNAME)/build && $(DEFAULT_INSTALL) -i
 
 # build targets
 include $(WORKDIR)../GENERAL.mk
