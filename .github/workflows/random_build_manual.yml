@@ -1,11 +1,6 @@
-name: C/C++ CI
+name: Random Build Manual
 
-on:
-  workflow_dispatch
-  push:
-    - branches: [ master, dev ]
-  schedule:
-    - cron: '0 */6 * * *' 
+on: workflow_dispatch
 
 jobs:
   build:
