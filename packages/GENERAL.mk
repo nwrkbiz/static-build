@@ -27,6 +27,21 @@ include $(PACKAGES_DIR)/../$(MAKECMDGOALS).mk
 endif
 endif
 
+### Allow extending flags per package
+ifneq ($(strip $(PKG_FFLAGS)),)
+FFLAGS+=$(PKG_FFLAGS)
+endif
+ifneq ($(strip $(PKG_CFLAGS)),)
+CFLAGS+=$(PKG_CFLAGS)
+endif
+ifneq ($(strip $(PKG_CXXFLAGS)),)
+CXXFLAGS+=$(PKG_CXXFLAGS)
+endif
+ifneq ($(strip $(PKG_LDFLAGS)),)
+LDFLAGS+=$(PKG_LDFLAGS)
+endif
+
+
 # newline
 define NL
 
