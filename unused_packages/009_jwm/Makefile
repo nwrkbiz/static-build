@@ -13,8 +13,6 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/LICENSE
 
 #### Build settings ####
 
-export ANDROID_SDK_ROOT=/usr/lib/android-sdk
-
 PKG_LDFLAGS=-lxcb -lXcursor -lXinerama -lXft  -lXrender -lXfixes -lXext -lX11 -lxcb -lXau -lXdmcp -lasound
 PRE_CFG=cd $(WORKDIR)$(DIRNAME) && ./autogen.sh
 CONFIGURE=$(DEFAULT_CFG)
