@@ -6,5 +6,6 @@ Working with at least some cpu architectures:
 * sdb
 * scrcpy (if android sdk is installed)
 * lwm
+* flwm
 
 Other packages are not working due to lacking dependencies or have broken build commands.
