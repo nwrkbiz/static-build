@@ -17,7 +17,7 @@ PKG_LDFLAGS=-lXcursor -lXinerama -lXft  -lXrender -lXfixes -lXext -lX11 -lxcb -l
 PRE_CFG=autoreconf -vfi
 CONFIGURE=$(DEFAULT_CFG) LIBS="-static -lXcursor -lXinerama -lXft  -lXrender -lXfixes -lXext -lX11 -lxcb -lXau -lXdmcp"
 MAKE=$(DEFAULT_MAKE)
-AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(NINJA_INSTALL)
+AFTER_BUILD=cp $(WORKDIR)$(DIRNAME)/flwm $(OUT_BIN)
 
 # build targets
 include $(WORKDIR)../GENERAL.mk
