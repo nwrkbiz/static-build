@@ -1,6 +1,6 @@
 ############################################################################
 # Author: Daniel Giritzer (daniel@giritzer.eu)
-# Description: Universal Makefile for the scrcpy binary/library. Depends on ffmpeg and sdl2
+# Description: Universal Makefile for the jwm window manager.
 ############################################################################
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
@@ -15,7 +15,7 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/LICENSE
 
 PKG_LDFLAGS=-lxcb -lXcursor -lXinerama -lXft  -lXrender -lXfixes -lXext -lX11 -lxcb -lXau -lXdmcp -lasound
 PRE_CFG=cd $(WORKDIR)$(DIRNAME) && ./autogen.sh
-CONFIGURE=$(DEFAULT_CFG)
+CONFIGURE=$(DEFAULT_CFG) LIBS="-static -lXcursor -lXinerama -lXft  -lXrender -lXfixes -lXext -lX11 -lxcb -lXau -lXdmcp"
 MAKE=$(DEFAULT_MAKE)
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(NINJA_INSTALL)
 
