@@ -54,6 +54,9 @@ all:
 
 .PHONY: unpack
 unpack:
+ifneq ($(strip $(PRE_DL)),)
+	$(PRE_DL)
+endif
 ifeq ("$(wildcard $(WORKDIR)/$(PACKNAME))","")
 	wget $(PACKAGE_URL)
 endif
