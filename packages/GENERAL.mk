@@ -58,7 +58,9 @@ ifneq ($(strip $(PRE_DL)),)
 	$(PRE_DL)
 endif
 ifeq ("$(wildcard $(WORKDIR)/$(PACKNAME))","")
+ifneq ($(strip $(PACKAGE_URL)),)
 	wget $(PACKAGE_URL)
+endif
 endif
 ifneq ($(strip $(BEFORE_UNPACK)),)
 	$(BEFORE_UNPACK)
