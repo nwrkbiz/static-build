@@ -3,7 +3,7 @@
 ############################################################################
 
 # general 
-MAKE_JOBS=8
+MAKE_JOBS=$(nproc)
 MAKE_VERBOSE=1
 OUTDIR=$(SETTINGS_DIR)3rdParty
 OUT_LICENSE=$(OUTDIR)/LICENSES
