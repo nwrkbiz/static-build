@@ -3,7 +3,7 @@
 ############################################################################
 
 # general 
-MAKE_JOBS=$(nproc)
+MAKE_JOBS=$(shell nproc)
 MAKE_VERBOSE=1
 OUTDIR=$(SETTINGS_DIR)3rdParty
 OUT_LICENSE=$(OUTDIR)/LICENSES
