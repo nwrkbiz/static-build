@@ -6,15 +6,15 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=opencv-4.5.0
-PACKNAME=4.5.0.zip
+DIRNAME=opencv-4.5.1
+PACKNAME=4.5.1.zip
 PACKAGE_URL=https://github.com/opencv/opencv/archive/$(PACKNAME)
 UNPACK=unzip -o
 LICENSE=$(WORKDIR)/$(DIRNAME)/LICENSE
 
 #### Build settings ####
 
-CONFIGURE=$(DEFAULT_CMK) -DBUILD_LIST=imgproc,imgcodecs,calib3d,videoio -DWITH_IPP=OFF -DBUILD_TBB=OFF -DBUILD_EXAMPLES=OFF -DBUILD_TESTS=OFF -DBUILD_PERF_TESTS=OFF -DBUILD_opencv_apps=OFF
+CONFIGURE=$(DEFAULT_CMK) -DBUILD_LIST=imgproc,imgcodecs,calib3d,videoio,features2d -DWITH_IPP=OFF -DBUILD_TBB=OFF -DBUILD_EXAMPLES=OFF -DBUILD_TESTS=OFF -DBUILD_PERF_TESTS=OFF -DBUILD_opencv_apps=OFF
 MAKE=$(DEFAULT_MAKE)
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME)/build && $(DEFAULT_MAKE) install/fast
 
