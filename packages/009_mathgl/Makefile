@@ -13,7 +13,7 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/COPYING $(WORKDIR)/$(DIRNAME)/COPYING_LGPL $(WORKD
 
 #### Build settings ####
 
-PRE_CFG=sed -i -e 's/mgl-fltk/mgl-fltk-static/g' $(WORKDIR)$(DIRNAME)/utils/CMakeLists.txt && sed -i -e '/mgl_fltk_example/d' $(WORKDIR)$(DIRNAME)/examples/CMakeLists.txt && sed -i -e 's/mgl-fltk/mgl-fltk-static/g' $(WORKDIR)$(DIRNAME)/examples/CMakeLists.txt && sed -i -e 's/mgl mgl-fltk/mgl-static mgl-fltk-static/g' $(WORKDIR)$(DIRNAME)/mgllab/CMakeLists.txt
+PRE_CFG=sed -i -e 's/mgl-fltk/mgl-fltk-static/g' $(WORKDIR)$(DIRNAME)/utils/CMakeLists.txt && sed -i -e '/mgl_fltk_example/d' $(WORKDIR)$(DIRNAME)/examples/CMakeLists.txt && sed -i -e 's/mgl-fltk/mgl-fltk-static/g' $(WORKDIR)$(DIRNAME)/examples/CMakeLists.txt && sed -i -e 's/mgl mgl-fltk/mgl-static mgl-fltk-static/g' $(WORKDIR)$(DIRNAME)/mgllab/CMakeLists.txt && sed -i -e 's/mglGlobalMess = "";//g' $(WORKDIR)$(DIRNAME)/src/canvas.cpp
 ifeq (,$(filter $(MAKECMDGOALS),windows_32 windows_64))
 CONFIGURE=$(DEFAULT_CMK) -Denable-gsl=ON -Denable-pdf=ON -Denable-gif=ON -Denable-pthread=ON -Denable-openmp=OFF -Denable-opengl=OFF -Denable-all-docs=off -Denable-all-swig=OFF -Denable-rvalue=ON -Denable-ltdl=OFF -Denable-doc-site=OFF -Denable-all-widgets=OFF -Denable-fltk=ON -DHPDF_INCLUDE_DIR=$(OUT_INCLUDE) -DHPDF_LIB=$(OUT_LIB)/libhpdfs.a -DMGL_DEP_LIBS="$(OUT_LIB)/libtiff.a;$(OUT_LIB)/libxcb.a;$(OUT_LIB)/libXau.a;$(OUT_LIB)/libXdmcp.a" -DFLTK_MATH_LIBRARY=$(OUT_PREFIX)/$(GCC_PREFIX)/lib/libm.a -Dlink_type=-static
 else

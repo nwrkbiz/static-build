@@ -12,7 +12,7 @@ On Linux a commonly faced problem is packaging, because it is not easily possibl
 Debian 10 (buster amd64) base installation with following additional packages and internet access:
 
 ```
-sudo apt install qemu-user-static wine-stable libwine fonts-wine wine-binfmt gperf flex bison pkg-config build-essential cmake meson mingw-w64 gfortran-mingw-w64 texinfo doxygen build-essential libltdl-dev 
+sudo apt install qemu-user-static wine-stable libwine fonts-wine wine-binfmt gperf flex bison pkg-config build-essential cmake meson mingw-w64 gfortran-mingw-w64 texinfo doxygen build-essential libltdl-dev texinfo
 ```
 
 #### Configure mingw to use posix threads
