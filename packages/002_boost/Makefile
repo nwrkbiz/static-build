@@ -13,7 +13,7 @@ MODULES=--with-system --with-iostreams --with-program_options --with-test --with
 # package info
 DIRNAME=boost_1_69_0
 PACKNAME=$(DIRNAME).zip
-PACKAGE_URL=https://dl.bintray.com/boostorg/release/1.69.0/source/$(PACKNAME)
+PACKAGE_URL=https://boostorg.jfrog.io/artifactory/main/release/1.69.0/source/$(PACKNAME)
 UNPACK=unzip -o
 LICENSE=$(WORKDIR)/$(DIRNAME)/LICENSE_1_0.txt
 
