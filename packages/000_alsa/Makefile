@@ -7,7 +7,7 @@ WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 # package info
 DIRNAME=alsa-lib-1.2.3
 PACKNAME=$(DIRNAME).tar.bz2
-PACKAGE_URL=ftp://ftp.alsa-project.org/pub/lib/$(PACKNAME)
+PACKAGE_URL=http://www.alsa-project.org/files/pub/lib/$(PACKNAME)
 UNPACK=tar xvf
 LICENSE=$(WORKDIR)/$(DIRNAME)/COPYING
 
