@@ -13,8 +13,8 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/LICENSE
 
 #### Build settings ####
 
-CONFIGURE=mkdir -p $(OUT_INCLUDE)
-MAKE=
+CONFIGURE=
+MAKE=mkdir -p $(OUT_INCLUDE)
 AFTER_BUILD=cp $(WORKDIR)/$(DIRNAME)/csv.h $(OUT_INCLUDE)
 
 # build targets
