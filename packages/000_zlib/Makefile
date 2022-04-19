@@ -5,7 +5,7 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=zlib-1.2.11
+DIRNAME=zlib-1.2.12
 PACKNAME=$(DIRNAME).tar.gz
 PACKAGE_URL=https://zlib.net/$(PACKNAME)
 UNPACK=tar xvzf
