@@ -5,8 +5,8 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=jpeg-9d
-PACKNAME=jpegsrc.v9d.tar.gz
+DIRNAME=jpeg-9e
+PACKNAME=jpegsrc.v9e.tar.gz
 PACKAGE_URL=http://www.ijg.org/files/$(PACKNAME)
 UNPACK=tar xvzf
 LICENSE=$(WORKDIR)/$(DIRNAME)/README
