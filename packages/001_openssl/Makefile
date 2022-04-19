@@ -5,7 +5,7 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=openssl-1.1.1h
+DIRNAME=openssl-1.1.1n
 PACKNAME=$(DIRNAME).tar.gz
 PACKAGE_URL=https://www.openssl.org/source/$(PACKNAME)
 UNPACK=tar xvzf
