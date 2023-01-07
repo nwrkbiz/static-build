@@ -9,10 +9,10 @@ On Linux a commonly faced problem is packaging, because it is not easily possibl
 
 ### Prerequisites
 
-Debian 10 (buster amd64) base installation with following additional packages and internet access:
+Debian 11 (bullseye amd64) base installation with following additional packages and internet access:
 
 ```
-sudo apt install qemu-user-static wine-stable libwine fonts-wine wine-binfmt gperf flex bison pkg-config build-essential cmake meson mingw-w64 gfortran-mingw-w64 texinfo doxygen build-essential libltdl-dev texinfo
+sudo apt install qemu-user-static wine libwine fonts-wine wine-binfmt gperf flex bison pkg-config build-essential cmake meson mingw-w64 gfortran-mingw-w64 texinfo doxygen build-essential libltdl-dev
 ```
 
 #### Configure mingw to use posix threads
