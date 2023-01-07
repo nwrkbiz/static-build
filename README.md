@@ -7,6 +7,10 @@ A set of makefiles to build cross-compile toolchains, static libraries and appli
 
 On Linux a commonly faced problem is packaging, because it is not easily possible to package a program for all different Linux flavors. There are many approaches like containerization to overcome this problem. One other way to archive this is, by completely statically linking all dependencies into your executable. For this to archive a special c library (here musl) is needed. This set of Makefiles will build the needed compilers, libc and many commonly needed C/C++ libraries from source so you can easily create statically linked executables.
 
+### Android Compatibility
+
+For your executables to be better compatible with android devices a set of patches is used, so some standard files (resolv.conf, shells, services, hosts) are also searched relative to your executable. If you build programs with FLTK based GUIs then you can pack your executable into an [Android-X11](https://github.com/nwrkbiz/android-xserver) based executable to install and run it on Android.
+
 ### Prerequisites
 
 Debian 11 (bullseye amd64) base installation with following additional packages and internet access:
