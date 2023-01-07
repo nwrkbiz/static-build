@@ -9,7 +9,7 @@ On Linux a commonly faced problem is packaging, because it is not easily possibl
 
 ### Android Compatibility
 
-For your executables to be better compatible with android devices a set of patches is used, so some standard files (resolv.conf, shells, services, hosts) are also searched relative to your executable. If you build programs with FLTK based GUIs then you can pack your executable into an [Android-X11](https://github.com/nwrkbiz/android-xserver) based executable to install and run it on Android.
+For your executables to be better compatible with android devices a set of patches is used, so some standard files (resolv.conf, shells, services, hosts) are also searched relative to your executable. If you build programs with FLTK based GUIs then you can pack your executable into an [Android-X11](https://github.com/nwrkbiz/android-xserver) based app to install and run it on Android.
 
 ### Prerequisites
 
