@@ -5,7 +5,7 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=libXdmcp-1.1.3
+DIRNAME=libXdmcp-1.1.4
 PACKNAME=$(DIRNAME).tar.gz
 PACKAGE_URL=https://www.x.org/releases/current/src/lib/$(PACKNAME)
 UNPACK=tar xvzf

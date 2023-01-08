@@ -5,8 +5,8 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=harfbuzz-2.6.4
-PACKNAME=2.6.4.zip
+DIRNAME=harfbuzz-6.0.0
+PACKNAME=6.0.0.zip
 PACKAGE_URL=https://github.com/harfbuzz/harfbuzz/archive/$(PACKNAME)
 UNPACK=unzip -o
 LICENSE=$(WORKDIR)/$(DIRNAME)/COPYING $(WORKDIR)/$(DIRNAME)/AUTHORS
@@ -14,7 +14,7 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/COPYING $(WORKDIR)/$(DIRNAME)/AUTHORS
 #### Build settings ####
 
 CONFIGURE=$(DEFAULT_CMK) -DHB_HAVE_FREETYPE=ON
-MAKE=$(DEFAULT_MAKE) harfbuzz
+MAKE=$(DEFAULT_MAKE) harfbuzz harfbuzz-subset
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME)/build && $(DEFAULT_MAKE) install/fast
 
 # build targets

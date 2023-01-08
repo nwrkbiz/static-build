@@ -5,7 +5,7 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=gsl-2.6
+DIRNAME=gsl-2.7.1
 PACKNAME=$(DIRNAME).tar.gz
 PACKAGE_URL=http://ftp.gnu.org/gnu/gsl/$(PACKNAME)
 UNPACK=tar xvzf

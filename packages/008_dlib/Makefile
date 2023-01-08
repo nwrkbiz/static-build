@@ -5,7 +5,7 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=dlib-19.21
+DIRNAME=dlib-19.24
 PACKNAME=$(DIRNAME).tar.bz2
 PACKAGE_URL=http://dlib.net/files/$(PACKNAME)
 UNPACK=tar xvf

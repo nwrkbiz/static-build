@@ -5,7 +5,7 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=libXi-1.7.10
+DIRNAME=libXi-1.8
 PACKNAME=$(DIRNAME).tar.gz
 PACKAGE_URL=https://www.x.org/releases/current/src/lib/$(PACKNAME)
 UNPACK=tar xvzf

@@ -5,8 +5,8 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=libexpat-R_2_2_10
-PACKNAME=R_2_2_10.zip
+DIRNAME=libexpat-R_2_5_0
+PACKNAME=R_2_5_0.zip
 PACKAGE_URL=https://github.com/libexpat/libexpat/archive/$(PACKNAME)
 UNPACK=unzip -o
 LICENSE=$(WORKDIR)/$(DIRNAME)/expat/COPYING $(WORKDIR)/$(DIRNAME)/expat/AUTHORS

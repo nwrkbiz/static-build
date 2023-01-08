@@ -5,7 +5,7 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=armadillo-10.1.2
+DIRNAME=armadillo-11.4.3
 PACKNAME=$(DIRNAME).tar.xz
 PACKAGE_URL=https://sourceforge.net/projects/arma/files/$(PACKNAME)
 UNPACK=tar xJf
@@ -13,7 +13,7 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/NOTICE.txt $(WORKDIR)/$(DIRNAME)/LICENSE.txt
 
 #### Build settings ####
 
-CONFIGURE=$(DEFAULT_CMK) -DBLAS_LIBRARY=$(OUT_LIB)/libblas.a -DLAPACK_LIBRARY=$(OUT_LIB)/liblapack.a
+CONFIGURE=$(DEFAULT_CMK) -DBLAS_LIBRARY=$(OUT_LIB)/libblas.a -DLAPACK_LIBRARY=$(OUT_LIB)/liblapack.a -DBUILD_SMOKE_TEST=false
 MAKE=$(DEFAULT_MAKE)
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME)/build && $(DEFAULT_INSTALL)
 

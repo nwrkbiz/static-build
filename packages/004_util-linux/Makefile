@@ -5,9 +5,9 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=util-linux-2.35.1
+DIRNAME=util-linux-2.38.1
 PACKNAME=$(DIRNAME).tar.gz
-PACKAGE_URL=https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.35/$(PACKNAME)
+PACKAGE_URL=https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.38/$(PACKNAME)
 UNPACK=tar xvzf
 LICENSE=$(WORKDIR)/$(DIRNAME)/COPYING $(WORKDIR)/$(DIRNAME)/AUTHORS
 

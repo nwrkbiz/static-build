@@ -5,9 +5,9 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=fltk-1.3.5
+DIRNAME=fltk-1.3.8
 PACKNAME=$(DIRNAME)-source.tar.gz
-PACKAGE_URL=https://www.fltk.org/pub/fltk/1.3.5/$(PACKNAME)
+PACKAGE_URL=https://www.fltk.org/pub/fltk/1.3.8/$(PACKNAME)
 UNPACK=tar xvzf
 LICENSE=$(WORKDIR)/$(DIRNAME)/COPYING $(WORKDIR)/$(DIRNAME)/CREDITS
 

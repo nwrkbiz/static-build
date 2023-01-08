@@ -5,7 +5,7 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=libXfixes-5.0.3
+DIRNAME=libXfixes-6.0.0
 PACKNAME=$(DIRNAME).tar.gz
 PACKAGE_URL=https://www.x.org/releases/current/src/lib/$(PACKNAME)
 UNPACK=tar xvzf

@@ -5,7 +5,7 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=freeglut-3.2.1
+DIRNAME=freeglut-3.4.0
 PACKNAME=$(DIRNAME).tar.gz
 PACKAGE_URL=http://prdownloads.sourceforge.net/freeglut/$(PACKNAME)
 UNPACK=tar xvzf

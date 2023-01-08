@@ -5,7 +5,7 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=libXau-1.0.9
+DIRNAME=libXau-1.0.11
 PACKNAME=$(DIRNAME).tar.gz
 PACKAGE_URL=https://www.x.org/releases/current/src/lib/$(PACKNAME)
 UNPACK=tar xvzf

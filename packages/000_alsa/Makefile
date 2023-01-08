@@ -5,7 +5,7 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=alsa-lib-1.2.3
+DIRNAME=alsa-lib-1.2.8
 PACKNAME=$(DIRNAME).tar.bz2
 PACKAGE_URL=http://www.alsa-project.org/files/pub/lib/$(PACKNAME)
 UNPACK=tar xvf

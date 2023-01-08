@@ -5,9 +5,9 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=libsepol-3.0
+DIRNAME=libsepol-3.4
 PACKNAME=$(DIRNAME).tar.gz
-PACKAGE_URL=https://github.com/SELinuxProject/selinux/releases/download/20191204/$(PACKNAME)
+PACKAGE_URL=https://github.com/SELinuxProject/selinux/releases/download/3.4/$(PACKNAME)
 UNPACK=tar xvzf
 LICENSE=$(WORKDIR)/$(DIRNAME)/COPYING
 

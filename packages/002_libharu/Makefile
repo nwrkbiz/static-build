@@ -5,15 +5,14 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=libharu-RELEASE_2_3_0
-PACKNAME=RELEASE_2_3_0.zip
+DIRNAME=libharu-2.4.3
+PACKNAME=v2.4.3.zip
 PACKAGE_URL=https://github.com/libharu/libharu/archive/$(PACKNAME)
 UNPACK=unzip -o
-LICENSE=$(WORKDIR)/$(DIRNAME)/README
+LICENSE=$(WORKDIR)/$(DIRNAME)/LICENSE
 #### Build settings ####
 
-PRE_CFG=sed -i -e 's~define	G3CODES~undef	G3CODES~g' $(WORKDIR)$(DIRNAME)/src/hpdf_image_ccitt.c
-CONFIGURE=$(DEFAULT_CMK)  -DMATH_LIB=m -DLIBHPDF_SHARED=NO -DLIBHPDF_STATIC=ON
+CONFIGURE=$(DEFAULT_CMK)  -DM_LIB=m -DMATH_LIB=m -DLIBHPDF_SHARED=NO -DLIBHPDF_STATIC=ON
 MAKE=$(DEFAULT_MAKE) -i
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME)/build && $(DEFAULT_INSTALL) -i
 

@@ -13,6 +13,7 @@ Debian 11 (bullseye amd64) base installation with following additional packages 
 
 ```
 sudo apt install qemu-user-static wine libwine fonts-wine wine-binfmt gperf flex bison pkg-config build-essential cmake meson mingw-w64 gfortran-mingw-w64 texinfo doxygen build-essential libltdl-dev
+dpkg --add-architecture i386 && apt-get update && apt-get install wine32
 ```
 
 #### Configure mingw to use posix threads

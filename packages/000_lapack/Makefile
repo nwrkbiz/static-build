@@ -5,8 +5,8 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=lapack-3.9.0
-PACKNAME=v3.9.0.tar.gz
+DIRNAME=lapack-3.11.0
+PACKNAME=v3.11.0.tar.gz
 PACKAGE_URL=https://github.com/Reference-LAPACK/lapack/archive/$(PACKNAME)
 UNPACK=tar xvzf
 LICENSE=$(WORKDIR)/$(DIRNAME)/LICENSE

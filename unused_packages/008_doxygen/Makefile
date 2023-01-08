@@ -5,8 +5,8 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=doxygen-Release_1_9_0
-PACKNAME=Release_1_9_0.zip
+DIRNAME=doxygen-Release_1_9_6
+PACKNAME=Release_1_9_6.zip
 PACKAGE_URL=https://github.com/doxygen/doxygen/archive/$(PACKNAME)
 UNPACK=unzip -o
 LICENSE=$(WORKDIR)/$(DIRNAME)/LICENSE

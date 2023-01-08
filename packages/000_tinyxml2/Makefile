@@ -7,8 +7,8 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=tinyxml2-8.0.0
-PACKNAME=8.0.0.zip
+DIRNAME=tinyxml2-9.0.0
+PACKNAME=9.0.0.zip
 PACKAGE_URL=https://github.com/leethomason/tinyxml2/archive/$(PACKNAME)
 UNPACK=unzip -o
 LICENSE=$(WORKDIR)/$(DIRNAME)/readme.md

@@ -1,21 +1,26 @@
 ############################################################################
 # Author: Daniel Giritzer (daniel@giritzer.eu)
-# Description: Universal Makefile for the libXext library (depends on libX11)
+# Description: Universal Makefile for the glu library. Depens on GL
 ############################################################################
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=libXext-1.3.5
+DIRNAME=glu-9.0.2
 PACKNAME=$(DIRNAME).tar.gz
-PACKAGE_URL=https://www.x.org/releases/current/src/lib/$(PACKNAME)
+PACKAGE_URL=ftp://ftp.freedesktop.org/pub/mesa/glu/$(PACKNAME)
 UNPACK=tar xvzf
-LICENSE=$(WORKDIR)/$(DIRNAME)/COPYING $(WORKDIR)/$(DIRNAME)/AUTHORS
 
 #### Build settings ####
 
-CONFIGURE=$(DEFAULT_CFG) --disable-selective-werror
+ifeq (,$(filter $(MAKECMDGOALS),windows_32 windows_64))
+PKG_LDFLAGS=-lX11
+CONFIGURE=$(DEFAULT_CFG)
 MAKE=$(DEFAULT_MAKE)
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(DEFAULT_INSTALL)
+else
+MAKE=
+endif
 
 # build targets
 include $(WORKDIR)../GENERAL.mk
+

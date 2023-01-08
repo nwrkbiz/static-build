@@ -5,7 +5,7 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=fontconfig-2.13.92
+DIRNAME=fontconfig-2.14.1
 PACKNAME=$(DIRNAME).tar.gz
 PACKAGE_URL=https://www.freedesktop.org/software/fontconfig/release/$(PACKNAME)
 UNPACK=tar xvzf

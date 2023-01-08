@@ -5,7 +5,7 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=xcb-proto-1.14
+DIRNAME=xcb-proto-1.15.2
 PACKNAME=$(DIRNAME).tar.gz
 PACKAGE_URL=https://xorg.freedesktop.org/archive/individual/xcb/$(PACKNAME)
 UNPACK=tar xvzf

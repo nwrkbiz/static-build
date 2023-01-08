@@ -5,11 +5,11 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=tiff-4.1.0
+DIRNAME=tiff-4.5.0
 PACKNAME=$(DIRNAME).zip
 PACKAGE_URL=http://download.osgeo.org/libtiff/$(PACKNAME)
 UNPACK=unzip -o
-LICENSE=$(WORKDIR)/$(DIRNAME)/COPYRIGHT
+LICENSE=$(WORKDIR)/$(DIRNAME)/LICENSE.md
 #### Build settings ####
 
 CONFIGURE=$(DEFAULT_CMK) -DBUILD_SHARED_LIBS=OFF 

@@ -5,9 +5,9 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=pcre-8.44
+DIRNAME=pcre-8.45
 PACKNAME=$(DIRNAME).tar.gz
-PACKAGE_URL=ftp://ftp.pcre.org/pub/pcre/$(PACKNAME)
+PACKAGE_URL=ftp://ftp.exim.org/pub/pcre/$(PACKNAME)
 UNPACK=tar xvzf
 LICENSE=$(WORKDIR)/$(DIRNAME)/COPYING $(WORKDIR)/$(DIRNAME)/AUTHORS
 

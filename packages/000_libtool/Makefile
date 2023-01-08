@@ -5,7 +5,7 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=libtool-2.4.6
+DIRNAME=libtool-2.4.7
 PACKNAME=$(DIRNAME).tar.gz
 PACKAGE_URL=http://ftpmirror.gnu.org/libtool/$(PACKNAME)
 UNPACK=tar xvzf

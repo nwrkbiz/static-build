@@ -5,9 +5,9 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=glib-2.66.3
+DIRNAME=glib-2.69.3
 PACKNAME=$(DIRNAME).tar.xz
-PACKAGE_URL=https://ftp.gnome.org/pub/gnome/sources/glib/2.66/$(PACKNAME)
+PACKAGE_URL=https://ftp.gnome.org/pub/gnome/sources/glib/2.69/$(PACKNAME)
 UNPACK=tar xJf
 LICENSE=$(WORKDIR)/$(DIRNAME)/README
 

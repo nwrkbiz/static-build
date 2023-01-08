@@ -5,15 +5,15 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=leveldb-1.22
-PACKNAME=1.22.zip
+DIRNAME=leveldb-1.23
+PACKNAME=1.23.zip
 PACKAGE_URL=https://github.com/google/leveldb/archive/$(PACKNAME)
 UNPACK=unzip -o
 LICENSE=$(WORKDIR)/$(DIRNAME)/LICENSE $(WORKDIR)/$(DIRNAME)/AUTHORS
 
 #### Build settings ####
 
-CONFIGURE=$(DEFAULT_CMK) -DHAVE_CRC32C=false -DHAVE_SNAPPY=false
+CONFIGURE=$(DEFAULT_CMK) -DHAVE_CRC32C=false -DHAVE_SNAPPY=false -DLEVELDB_BUILD_TESTS=false -DLEVELDB_BUILD_BENCHMARKS=false
 MAKE=$(DEFAULT_MAKE) leveldb
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME)/build && $(DEFAULT_MAKE) install/fast
 

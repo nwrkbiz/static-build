@@ -5,7 +5,7 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=xorgproto-2020.1
+DIRNAME=xorgproto-2022.2
 PACKNAME=$(DIRNAME).tar.gz
 PACKAGE_URL=https://www.x.org/releases/current/src/proto/$(PACKNAME)
 UNPACK=tar xvzf

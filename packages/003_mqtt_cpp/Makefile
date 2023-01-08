@@ -5,8 +5,8 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=mqtt_cpp-12.1.0
-PACKNAME=v12.1.0.zip
+DIRNAME=mqtt_cpp-13.1.0
+PACKNAME=v13.1.0.zip
 PACKAGE_URL=https://github.com/redboltz/mqtt_cpp/archive/$(PACKNAME)
 UNPACK=unzip -o
 LICENSE=$(WORKDIR)/$(DIRNAME)/LICENSE_1_0.txt

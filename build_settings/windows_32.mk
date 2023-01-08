@@ -39,7 +39,7 @@ CUSTOM_MSN=
 
 ### Customize CFG/CMK
 CUSTOM_CMK=-DCMAKE_SYSTEM_PROCESSOR=x86 -DWIN32=true -D_WIN32=true -DMINGW=true -DCMAKE_SYSTEM_NAME=Windows -DCMAKE_RC_COMPILER=$(GCC_PATH)/$(GCC_PREFIX)-windres -DHB_HAVE_UNISCRIBE=true  -DHAVE_MMAP=false -DHAVE_STRTOD_L=false
-CUSTOM_CFG=GCC_WINDRES=$(GCC_PATH)/$(GCC_PREFIX)-windres WINDRES=$(GCC_PATH)/$(GCC_PREFIX)-windres LIBS="-lssp -lusp10 -lole32 -luuid -lcomctl32 -lwsock32 -lws2_32 -lksuser -lwinmm -lrpcrt4 -lcrypt32 -lgdi32"
+CUSTOM_CFG=GCC_WINDRES=$(GCC_PATH)/$(GCC_PREFIX)-windres WINDRES=$(GCC_PATH)/$(GCC_PREFIX)-windres LIBS="-lshlwapi -lssp -lusp10 -lole32 -luuid -lcomctl32 -lwsock32 -lws2_32 -lksuser -lwinmm -lrpcrt4 -lcrypt32 -lgdi32"
 
 ### Package Related CFG
 OPENSSL_CFG=mingw

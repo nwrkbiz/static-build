@@ -5,7 +5,7 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=pixman-0.38.0
+DIRNAME=pixman-0.42.0
 PACKNAME=$(DIRNAME).tar.gz
 PACKAGE_URL=https://www.cairographics.org/releases/$(PACKNAME)
 UNPACK=tar xvzf

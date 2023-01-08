@@ -11,9 +11,9 @@ MODULES=--with-system --with-iostreams --with-program_options --with-test --with
 # log, math, mpi, program_options, python, random, regex, serialization, signals, stacktrace, system, test, thread, timer, type_erasure, wave
 
 # package info
-DIRNAME=boost_1_79_0
+DIRNAME=boost_1_81_0
 PACKNAME=$(DIRNAME).zip
-PACKAGE_URL=https://boostorg.jfrog.io/artifactory/main/release/1.79.0/source/$(PACKNAME)
+PACKAGE_URL=https://boostorg.jfrog.io/artifactory/main/release/1.81.0/source/$(PACKNAME)
 UNPACK=unzip -o
 LICENSE=$(WORKDIR)/$(DIRNAME)/LICENSE_1_0.txt
 

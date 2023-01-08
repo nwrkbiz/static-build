@@ -5,8 +5,8 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=libffi-master
-PACKNAME=master.zip
+DIRNAME=libffi-3.4.2
+PACKNAME=v3.4.2.zip
 PACKAGE_URL=https://github.com/libffi/libffi/archive/$(PACKNAME)
 UNPACK=unzip -o
 LICENSE=$(WORKDIR)/$(DIRNAME)/LICENSE $(WORKDIR)/$(DIRNAME)/LICENSE-BUILDTOOLS

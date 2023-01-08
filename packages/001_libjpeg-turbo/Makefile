@@ -5,9 +5,9 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=libjpeg-turbo-2.0.5
+DIRNAME=libjpeg-turbo-2.1.4
 PACKNAME=$(DIRNAME).tar.gz
-PACKAGE_URL=https://sourceforge.net/projects/libjpeg-turbo/files/2.0.5/$(PACKNAME)
+PACKAGE_URL=https://sourceforge.net/projects/libjpeg-turbo/files/2.1.4/$(PACKNAME)
 UNPACK=tar xvzf
 LICENSE=$(WORKDIR)/$(DIRNAME)/LICENSE.md
 

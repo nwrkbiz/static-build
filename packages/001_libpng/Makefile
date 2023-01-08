@@ -5,7 +5,7 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=libpng-1.6.37
+DIRNAME=libpng-1.6.38
 PACKNAME=$(DIRNAME).tar.gz
 PACKAGE_URL=https://download.sourceforge.net/libpng/$(PACKNAME)
 UNPACK=tar xvzf

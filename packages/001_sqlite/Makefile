@@ -5,9 +5,9 @@
 WORKDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # package info
-DIRNAME=sqlite-autoconf-3330000
+DIRNAME=sqlite-autoconf-3400100
 PACKNAME=$(DIRNAME).tar.gz
-PACKAGE_URL=https://www.sqlite.org/2020/$(PACKNAME)
+PACKAGE_URL=https://www.sqlite.org/2022/$(PACKNAME)
 UNPACK=tar xvzf
 LICENSE=$(WORKDIR)/$(DIRNAME)/sqlite3.h
 
