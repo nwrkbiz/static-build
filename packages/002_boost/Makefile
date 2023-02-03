@@ -19,7 +19,7 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/LICENSE_1_0.txt
 
 #### Build settings ####
 
-CONFIGURE=echo "using gcc : $(OUT_TARGET) : $(GCC_PREFIX)-g++ ;" > $(WORKDIR)/$(DIRNAME)/user-config.jam;  \
+CONFIGURE=echo "using gcc : $(OUT_TARGET) : $(CXX) : <archiver>$(AR) <ranlib>$(RANLIB) ;" > $(WORKDIR)/$(DIRNAME)/user-config.jam;  \
 cd $(WORKDIR)/$(DIRNAME);  \
 bootstrap.sh
 MAKE=b2 --user-config="user-config.jam" cflags="$(CFLAGS)" cxxflags="$(CXXFLAGS)" linkflags="$(LDFLAGS)" toolset=gcc-$(OUT_TARGET) link=static variant=release address-model=$(ARCH_BIT) $(MODULES) -j $(MAKE_JOBS) install --prefix=$(OUT_PREFIX)

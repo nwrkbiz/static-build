@@ -19,10 +19,15 @@ CONFIGURE=$(DEFAULT_CFG) --disable-pulse --enable-alsa --disable-alsa-mmap --dis
 MAKE=$(DEFAULT_MAKE)
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(DEFAULT_INSTALL)
 else
+ifeq (,$(filter $(MAKECMDGOALS),windows_32 windows_64))
+# webasm, do not build
+MAKE=
+else
 PRE_CFG=./autogen.sh
 CONFIGURE=$(DEFAULT_CFG) --disable-pulse --disable-alsa --disable-alsa-mmap --enable-wmm
 MAKE=$(DEFAULT_MAKE)
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(DEFAULT_INSTALL)
+endif
 endif
 
 # build targets

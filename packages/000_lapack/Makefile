@@ -17,14 +17,15 @@ INCLUDE_OUTPUT=
 
 #### Build settings ####
 
-PRE_CFG=echo CC=$(GCC_PREFIX)-gcc > make.inc ;\
+ifeq (,$(filter $(MAKECMDGOALS),webasm_llvm))
+PRE_CFG=echo CC=$(CC) > make.inc ;\
 echo CFLAGS=-O3 $(CFLAGS) >> make.inc ;\
-echo FC=$(GCC_PREFIX)-gfortran >> make.inc ;\
+echo FC=$(FC) >> make.inc ;\
 echo FFLAGS=$(FFLAGS) >> make.inc ;\
 echo FFLAGS_DRV=$(FFLAGS) >> make.inc ;\
 echo FFLAGS_NOOPT=$(FFLAGS) >> make.inc ;\
-echo AR=$(GCC_PREFIX)-ar >> make.inc ;\
-echo RANLIB=$(GCC_PREFIX)-ranlib >> make.inc ;\
+echo AR=$(AR) >> make.inc ;\
+echo RANLIB=$(RANLIB) >> make.inc ;\
 echo ARFLAGS=cr >> make.inc ;\
 echo TIMER=INT_ETIME >> make.inc ;\
 echo BLASLIB=../../libblas.a >> make.inc ;\
@@ -33,6 +34,9 @@ echo LAPACKLIB=../liblapack.a >> make.inc
 MAKE=cd SRC && $(DEFAULT_MAKE) && cd ../BLAS && $(DEFAULT_MAKE) && cd ../CBLAS && $(DEFAULT_MAKE)
 AFTER_BUILD=cp -rf $(WORKDIR)/$(DIRNAME)/CBLAS/include/*.h $(OUT_INCLUDE) && \
 cp -rf $(WORKDIR)/$(DIRNAME)/LAPACKE/include/*.h $(OUT_INCLUDE)
+else
+MAKE=
+endif
 
 # build targets
 include $(WORKDIR)../GENERAL.mk

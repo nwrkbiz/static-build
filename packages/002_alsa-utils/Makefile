@@ -14,7 +14,7 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/COPYING
 
 #### Build settings ####
 
-ifeq (,$(filter $(MAKECMDGOALS),windows_32 windows_64))
+ifeq (,$(filter $(MAKECMDGOALS),windows_32 windows_64 webasm_llvm))
 CONFIGURE=$(DEFAULT_CFG) --disable-nls --disable-xmlto --enable-alsa-topology
 MAKE=$(DEFAULT_MAKE)
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(DEFAULT_INSTALL) -i

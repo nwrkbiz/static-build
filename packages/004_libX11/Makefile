@@ -13,9 +13,14 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/COPYING $(WORKDIR)/$(DIRNAME)/AUTHORS
 
 #### Build settings ####
 
+ifneq (,$(filter $(MAKECMDGOALS),webasm_llvm))
+# webasm
+MAKE=
+else
 CONFIGURE=$(DEFAULT_CFG) --disable-selective-werror --disable-ipv6
 MAKE=$(DEFAULT_MAKE)
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(DEFAULT_INSTALL)
+endif
 
 # build targets
 include $(WORKDIR)../GENERAL.mk

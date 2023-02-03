@@ -19,7 +19,7 @@ INCLUDE_OUTPUT=$(WORKDIR)/$(DIRNAME)/tinyxml2.h
 
 #### Build settings ####
 
-MAKE=$(GCC_PREFIX)-g++ $(CXXFLAGS) -c -o tinyxml2.o tinyxml2.cpp; $(GCC_PREFIX)-ar rvs libtinyxml2.a tinyxml2.o
+MAKE=$(CXX) $(CXXFLAGS) -c -o tinyxml2.o tinyxml2.cpp; $(AR) rvs libtinyxml2.a tinyxml2.o
 
 # build targets
 include $(WORKDIR)../GENERAL.mk

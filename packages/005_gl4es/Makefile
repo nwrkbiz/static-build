@@ -16,7 +16,7 @@ INCLUDE_OUTPUT=$(WORKDIR)/$(DIRNAME)/include/*
 
 #### Build settings ####
 
-ifeq (,$(filter $(MAKECMDGOALS),windows_32 windows_64))
+ifeq (,$(filter $(MAKECMDGOALS),windows_32 windows_64 webasm_llvm))
 CONFIGURE=$(DEFAULT_CMK) -DSTATICLIB=true
 MAKE=$(DEFAULT_MAKE)
 else

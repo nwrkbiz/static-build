@@ -13,7 +13,7 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/README
 
 #### Build settings ####
 
-ifeq (,$(filter $(MAKECMDGOALS),windows_32 windows_64 linux_sh2fdpic_musl linux_sh2_musl linux_sh2eb_musl linux_sh2ebfdpic_musl))
+ifeq (,$(filter $(MAKECMDGOALS),windows_32 windows_64 linux_sh2fdpic_musl linux_sh2_musl linux_sh2eb_musl linux_sh2ebfdpic_musl webasm_llvm))
 CONFIGURE=$(DEFAULT_MSN)
 MAKE=$(NINJA_MAKE)
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(NINJA_INSTALL)

@@ -14,7 +14,7 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/COPYING
 
 #### Build settings ####
 
-ifeq (,$(filter $(MAKECMDGOALS),windows_32 windows_64))
+ifeq (,$(filter $(MAKECMDGOALS),windows_32 windows_64 webasm_llvm))
 CONFIGURE=$(DEFAULT_CFG) --disable-shared --disable-python --with-libdl=no --with-configdir=./alsa_config
 MAKE=$(DEFAULT_MAKE)
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(DEFAULT_INSTALL) && mkdir -p $(OUT_PREFIX)/alsa_config && cp -rf $(WORKDIR)$(DIRNAME)/src/conf/alsa_config/* $(OUT_PREFIX)/alsa_config && cp -rf $(WORKDIR)$(DIRNAME)/src/conf/cards/alsa_config/* $(OUT_PREFIX)/alsa_config/ && cp -rf $(WORKDIR)$(DIRNAME)/src/conf/pcm/alsa_config/* $(OUT_PREFIX)/alsa_config

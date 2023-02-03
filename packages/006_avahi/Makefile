@@ -14,7 +14,7 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/LICENSE
 #### Build settings ####
 
 
-ifeq (,$(filter $(MAKECMDGOALS),windows_32 windows_64 linux_sh2fdpic_musl linux_sh2_musl linux_sh2eb_musl linux_sh2ebfdpic_musl))
+ifeq (,$(filter $(MAKECMDGOALS),windows_32 windows_64 linux_sh2fdpic_musl linux_sh2_musl linux_sh2eb_musl linux_sh2ebfdpic_musl webasm_llvm))
 CONFIGURE=$(DEFAULT_CFG) --disable-stack-protector --with-systemdsystemunitdir=$(OUT_LIB)/system --with-distro=none --disable-qt4 --disable-qt5 --disable-gtk --disable-gtk3 --disable-gdbm --disable-dbus --disable-mono  --disable-python-dbus --disable-pygobject  --disable-python --disable-mono --disable-monodoc 
 MAKE=$(DEFAULT_MAKE)
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(DEFAULT_INSTALL)

@@ -13,8 +13,8 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/COPYING $(WORKDIR)/$(DIRNAME)/AUTHORS
 
 #### Build settings ####
 
-ifeq (,$(filter $(MAKECMDGOALS),windows_32 windows_64))
-CONFIGURE=autoreconf -vfi && $(DEFAULT_CFG)
+ifeq (,$(filter $(MAKECMDGOALS),windows_32 windows_64 webasm_llvm))
+CONFIGURE=echo "pkgconfigdir=$(OUT_LIB)/pkgconfig" >> Makefile.am && autoreconf -vfi && PKG_INSTALLDIR=$(OUT_LIB)/pkgconfig $(DEFAULT_CFG)
 MAKE=$(DEFAULT_MAKE)
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(DEFAULT_INSTALL)
 else

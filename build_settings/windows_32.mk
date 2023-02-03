@@ -4,12 +4,6 @@
 SETTINGS_DIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 include $(SETTINGS_DIR)/build_settings/globals.mk
 
-# General compiler settings
-GCC_HOST_PREFIX=x86_64-linux-gnu # GCC prefix for the architecture of this machine
-GCC_PREFIX=i686-w64-mingw32
-GCC_PATH=/usr/bin
-ARCH_BIT=32
-
 # Output settings for 3rd party libraries 
 OUT_TARGET=windows_32
 OUT_PREFIX=$(OUTDIR)/$(OUT_TARGET)
@@ -19,6 +13,27 @@ OUT_INCLUDE=$(OUT_PREFIX)/include
 
 export LD_LIBRARY_PATH=$(OUT_LIB)
 export PATH:=$(OUT_BIN):$(PATH):.
+
+# General compiler settings
+COMPILER_HOST_PREFIX=x86_64-linux-gnu # GCC prefix for the architecture of this machine
+COMPILER_PREFIX=i686-w64-mingw32
+COMPILER_PATH=/usr/bin
+ARCH_BIT=32
+
+FC=$(COMPILER_PREFIX)-gfortran
+CC=$(COMPILER_PREFIX)-gcc
+CXX=$(COMPILER_PREFIX)-g++
+AR=$(COMPILER_PREFIX)-ar
+LD=$(COMPILER_PREFIX)-ld
+NM=$(COMPILER_PREFIX)-nm
+LDSHARED=$(COMPILER_PREFIX)-ld
+RANLIB=$(COMPILER_PREFIX)-ranlib
+STRIP=$(COMPILER_PREFIX)-strip
+SIZE=$(COMPILER_PREFIX)-size
+OBJCOPY=$(COMPILER_PREFIX)-objcopy
+OBJDUMP=$(COMPILER_PREFIX)-objdump
+READELF=$(COMPILER_PREFIX)-readelf
+WINDRES=$(COMPILER_PREFIX)-windres
 
 ### FLAGS
 DEFAULT_CFLAGS=-m32 -fPIC -static-libgcc -O3 -D_WIN32 -DMINGW
@@ -35,11 +50,15 @@ CPU=i686
 CPU_FAMILY=x86
 ENDIAN=little
 OS=windows
+MSN_CMD=meson
 CUSTOM_MSN=
 
 ### Customize CFG/CMK
-CUSTOM_CMK=-DCMAKE_SYSTEM_PROCESSOR=x86 -DWIN32=true -D_WIN32=true -DMINGW=true -DCMAKE_SYSTEM_NAME=Windows -DCMAKE_RC_COMPILER=$(GCC_PATH)/$(GCC_PREFIX)-windres -DHB_HAVE_UNISCRIBE=true  -DHAVE_MMAP=false -DHAVE_STRTOD_L=false
-CUSTOM_CFG=GCC_WINDRES=$(GCC_PATH)/$(GCC_PREFIX)-windres WINDRES=$(GCC_PATH)/$(GCC_PREFIX)-windres LIBS="-lshlwapi -lssp -lusp10 -lole32 -luuid -lcomctl32 -lwsock32 -lws2_32 -lksuser -lwinmm -lrpcrt4 -lcrypt32 -lgdi32"
+MAK_CMD=make
+CMK_CMD=cmake
+CFG_CMD=configure
+CUSTOM_CMK=-DCMAKE_SYSTEM_PROCESSOR=x86 -DWIN32=true -D_WIN32=true -DMINGW=true -DCMAKE_SYSTEM_NAME=Windows -DCMAKE_RC_COMPILER=$(COMPILER_PATH)/$(WINDRES) -DHB_HAVE_UNISCRIBE=true  -DHAVE_MMAP=false -DHAVE_STRTOD_L=false
+CUSTOM_CFG=GCC_WINDRES=$(COMPILER_PATH)/$(WINDRES) WINDRES=$(COMPILER_PATH)/$(WINDRES) LIBS="-lshlwapi -lssp -lusp10 -lole32 -luuid -lcomctl32 -lwsock32 -lws2_32 -lksuser -lwinmm -lrpcrt4 -lcrypt32 -lgdi32"
 
 ### Package Related CFG
 OPENSSL_CFG=mingw

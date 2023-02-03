@@ -13,7 +13,7 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/LICENSE
 
 #### Build settings ####
 
-ifeq (,$(filter $(MAKECMDGOALS),windows_32 windows_64))
+ifeq (,$(filter $(MAKECMDGOALS),windows_32 windows_64 webasm_llvm))
 CONFIGURE=sed -i 's/AC_FUNC_SETPGRP//g' configure.ac && autoreconf -vfi && $(DEFAULT_CFG)
 MAKE=$(DEFAULT_MAKE)
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(DEFAULT_INSTALL)

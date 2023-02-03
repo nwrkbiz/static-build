@@ -13,9 +13,17 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/LICENSE.txt $(WORKDIR)/$(DIRNAME)/CREDITS.txt
 
 #### Build settings ####
 
+ifneq (,$(filter $(MAKECMDGOALS),webasm_llvm))
+# webasm
+CONFIGURE=$(DEFAULT_CMK) -DEMSCRIPTEN=on
+MAKE=$(DEFAULT_MAKE)
+AFTER_BUILD=cd $(WORKDIR)$(DIRNAME)/build && $(DEFAULT_INSTALL)
+else
 CONFIGURE=$(DEFAULT_CFG) --disable-pulseaudio
 MAKE=$(DEFAULT_MAKE)
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(DEFAULT_INSTALL)
+endif
+
 
 # build targets
 include $(WORKDIR)../GENERAL.mk

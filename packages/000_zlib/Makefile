@@ -13,7 +13,7 @@ LICENSE=$(WORKDIR)/$(DIRNAME)/README $(WORKDIR)/$(DIRNAME)/zlib.h
 
 #### Build settings ####
 
-PRE_CFG=export CC=$(GCC_PATH)/$(GCC_PREFIX)-gcc && export AR=$(GCC_PATH)/$(GCC_PREFIX)-ar && export CFLAGS="$(CFLAGS)" && export LDFLAGS="$(LDFLAGS)"
+PRE_CFG=export CC=$(COMPILER_PATH)/$(CC) && export AR=$(COMPILER_PATH)/$(AR) && export CFLAGS="$(CFLAGS)" && export LDFLAGS="$(LDFLAGS)"
 CONFIGURE=configure --static --libdir=$(OUT_LIB) --sharedlibdir=$(OUT_LIB) --includedir=$(OUT_INCLUDE) --eprefix=$(OUT_PREFIX) --prefix=$(OUT_PREFIX)
 MAKE=$(DEFAULT_MAKE)
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(DEFAULT_INSTALL)

@@ -17,10 +17,14 @@ mkdir -p $(OUT_LICENSE)/$(DIRNAME)/src/gzip && cp $(WORKDIR)/$(DIRNAME)/src/gzip
 
 #### Build settings ####
 
+ifneq (,$(filter $(MAKECMDGOALS),webasm_llvm))
+# webasm
+MAKE=
+else
 CONFIGURE=$(DEFAULT_CFG) --with-brotli=no
 MAKE=$(DEFAULT_MAKE)
 AFTER_BUILD=cd $(WORKDIR)$(DIRNAME) && $(DEFAULT_INSTALL)
-
+endif
 
 # build targets
 include $(WORKDIR)../GENERAL.mk
