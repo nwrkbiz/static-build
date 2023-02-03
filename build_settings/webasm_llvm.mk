@@ -58,7 +58,7 @@ CUSTOM_MSN=
 
 ### Customize CFG/CMK
 MAK_CMD=emmake make
-CMK_CMD=emcmake cmake
+CMK_CMD=cmake
 CFG_CMD=emconfigure configure
 CUSTOM_CMK=-DCMAKE_EXECUTABLE_SUFFIX=".js" -DCMAKE_SYSTEM_PROCESSOR=x86 -DEMSCRIPTEN_ROOT_PATH=$(OUT_BIN) -DCMAKE_C_PLATFORM_ID=emscripten -DCMAKE_CXX_PLATFORM_ID=emscripten -DCMAKE_C_FLAGS="$(CFLAGS) -D'__TBB_machine_fetchadd4(addr, val)=__sync_fetch_and_add(addr, val)' -include emscripten/version.h -msimd128" -DCMAKE_CXX_FLAGS="$(CXXFLAGS) -D'__TBB_machine_fetchadd4(addr, val)=__sync_fetch_and_add(addr, val) -msimd128' -include emscripten/version.h"
 CUSTOM_CFG=
