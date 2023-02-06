@@ -16,8 +16,10 @@ For your executables to be better compatible with android devices a set of patch
 Debian 11 (bullseye amd64) base installation with following additional packages and internet access:
 
 ```
-sudo apt install qemu-user-static wine libwine fonts-wine wine-binfmt gperf flex bison pkg-config build-essential cmake meson mingw-w64 gfortran-mingw-w64 texinfo doxygen build-essential libltdl-dev python3 python3-numpy nodejs npm
-dpkg --add-architecture i386 && apt-get update && apt-get install wine32
+sudo apt install wget qemu-user-static wine libwine fonts-wine wine-binfmt gperf flex bison pkg-config build-essential cmake meson mingw-w64 gfortran-mingw-w64 texinfo doxygen build-essential libltdl-dev python3 python3-numpy nodejs npm
+sudo dpkg --add-architecture i386 
+sudo apt update 
+sudo apt install wine32
 ```
 
 #### Configure mingw to use posix threads
